@@ -55,7 +55,9 @@ one implementation shared by the scorer and the analyzer.
 
 `questions.json` contains a `_CANARY_` record with a unique GUID that is not a question
 and is never sent to models by the runner. If a model can reproduce this GUID, this
-dataset was in its training data — please report such a finding as an issue.
+dataset was in its training data — please report such a finding as an issue. Note the
+asymmetry: reproducing the GUID is positive evidence of contamination, but failing to
+reproduce it does not prove the absence of contamination.
 
 ## Data provenance and legal basis
 

@@ -38,7 +38,7 @@ gpt-5.6-terra; the retired-from-pricing gpt-5 will not be re-run.
 
 1. **The frontier gap replicates on the rebuilt set.** claude-opus-5 (74.2%) leads;
    both Polish models sit ~30 points below the frontier (44.3% / 43.0%) with near-zero
-   draw-to-draw variance (0–2 unstable items vs 22–25 for frontier reasoning models).
+   draw-to-draw variance (0–2 unstable items vs 21–25 for frontier reasoning models).
 2. **Zero abstention is no longer a Polish-model signature.** In v0.1 the story was
    "both Polish models never abstain (0/80), frontier abstains up to 21%". In v0.2 both
    new OpenAI models — gpt-5.6-sol and gpt-5.6-terra — also abstained **zero times in
@@ -49,7 +49,7 @@ gpt-5.6-terra; the retired-from-pricing gpt-5 will not be re-run.
    calibration-by-vendor, not calibration-by-size.
 3. **A1 (commencement-date from clause) is the discriminating family**: 4–50% across
    the roster, every model's worst family. A2/A3 are near-saturated for frontier models.
-4. **Draw instability concentrates in reasoning models**: 22–25/80 items flip outcome
+4. **Draw instability concentrates in reasoning models**: 21–25/79 items flip outcome
    class across draws for opus/sol/terra vs 0–6 for the rest — temperature 0 is not
    determinism for reasoning stacks (replicates the v0.1→v0.2 planning observation).
 
