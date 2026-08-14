@@ -9,12 +9,12 @@ question-ambiguous, and note the evidence (Dz.U. + article).
 
 | # | qid | gold | verdict | evidence |
 |---|---|---|---|---|
-| 1 | A1-DU-2001-1408 | 2002-11-10 | | |
-| 2 | A1-DU-2012-1091 | (see questions.json) | | |
-| 3 | A1-DU-2021-904 | (see questions.json) | | |
-| 4 | A1-DU-2006-874 | (see questions.json) | | |
-| 5 | A1-DU-2006-1533 | (see questions.json) | | |
-| 6 | A1-DU-2014-1071 | (see questions.json) | | |
+| 1 | A1-DU-2001-1408 | 2002-11-10 | gold-ok | ISAP przepis koncowy, verified by owner 2026-08-14 |
+| 2 | A1-DU-2012-1091 | 2012-10-17 | gold-ok | ISAP przepis koncowy, verified by owner 2026-08-14 |
+| 3 | A1-DU-2021-904 | 2021-05-15 | gold-ok | ISAP przepis koncowy, verified by owner 2026-08-14 |
+| 4 | A1-DU-2006-874 | 2006-07-29 | gold-ok | ISAP przepis koncowy, verified by owner 2026-08-14 |
+| 5 | A1-DU-2006-1533 | 2006-12-06 | gold-ok | ISAP przepis koncowy, verified by owner 2026-08-14 |
+| 6 | A1-DU-2014-1071 | 2014-08-26 | gold-ok | ISAP przepis koncowy, verified by owner 2026-08-14 |
 
 Note on #1: models cluster on three different dates (2003-01-01 ×3 draws opus,
 2002-05-17 ×3 gemini-pro, 2002-02-10 ×4 sol) — disagreement pattern suggests a
@@ -27,15 +27,14 @@ check whether the nugget is too strict, not whether the model is right.
 
 | # | qid | hits | suspicion |
 |---|---|---:|---|
-| 1 | A1-DU-2007-328 | 19 | nugget format vs date-in-text mismatch |
-| 2 | A1-DU-2004-624 | 13 | as above |
-| 3 | A2-DU-2006-1539-2014-10-05 | 5 | bielik cites tekst jednolity in prose |
-| 4 | A1-DU-2021-904 | 5 | also in Queue 1 — double signal |
-| 5 | A3v-DU-2023-556 | 4 | opus consistently answers TAK vs gold NIE — gold suspect |
-| 6 | A1-DU-2004-2784 | 3 | |
-| 7 | A4n-DU-2023-556 | 1 | same act as #5 — review together |
-| 8 | A2-DU-2001-353-2016-01-27 | 1 | "poz. 1030" vs gold "poz. 103" — model wrong, generous
-        matcher artifact; likely no action |
+| 1 | A1-DU-2007-328 | 19 | no-action: models wrote wrong dates (2007-04-01/15); digit-overlap artifact of gold_visible |
+| 2 | A1-DU-2004-624 | 13 | no-action: wrong dates (2004-05-01, 16.07, 16.04); same artifact |
+| 3 | A2-DU-2006-1539-2014-10-05 | 5 | no-action: bielik cites poz. 1446 vs gold 144; substring artifact, scorer right |
+| 4 | A1-DU-2021-904 | 5 | no-action: wrong dates (2021-05-20, 16.05); gold-ok per Queue 1 |
+| 5 | A3v-DU-2023-556 | 4 | OPEN: question-ambiguous candidate - staged commencement, "obowiazywala juz" unclear; owner decision pending |
+| 6 | A1-DU-2004-2784 | 3 | no-action: terra wrote 2005-01-15/12/14; digit artifact |
+| 7 | A4n-DU-2023-556 | 1 | OPEN: needs ISAP check - does Dz.U. 2023 poz. 556 have amending acts effective after 2023-09-29? |
+| 8 | A2-DU-2001-353-2016-01-27 | 1 | no-action: "poz. 1030" vs gold "poz. 103"; model wrong, matcher artifact |
 
 ## Cut candidates (no signal)
 

@@ -5,8 +5,9 @@ was in force on a given date, when did an act enter into force, which Dziennik U
 position is the current consolidated text. 80 questions across 64 acts, 4 question
 families, deterministic string-nugget scoring — no LLM-as-judge.
 
-> **Status: pre-release skeleton.** Gold answers are undergoing independent human legal
-> review (`REVIEW-v0.2.md`); do not treat scores as final until this notice is removed.
+> **Status: golds verified.** All items flagged by the failure analyzer went through
+> independent human legal review against ISAP commencement clauses (2026-08-14):
+> zero gold edits, one ambiguous item quarantined. See `REVIEW-v0.2.md`.
 
 ## Question families
 
@@ -20,17 +21,17 @@ families, deterministic string-nugget scoring — no LLM-as-judge.
 Abstention ("NIE WIEM"), truncation, and transport errors are separate buckets, never
 counted as wrong. Strict accuracy is computed on answered items.
 
-## v0.2 results (2026-08-14, N=5 draws where provider quotas allowed)
+## v0.2 results (2026-08-14, N=5 draws where provider quotas allowed, 79 scored)
 
 | model | N valid | strict (answered) | abstained/draw |
 |---|---:|---:|---:|
-| claude-opus-5 | 5 | **73.1%** (68.6–76.5) | 11.6 |
-| gpt-5.6-sol | 5 | 69.8% (65.0–75.0) | **0** |
-| gemini-3.1-pro | 3 | 63.6% | 14.0 |
-| gpt-5.6-terra | 5 | 57.2% (52.5–61.2) | **0** |
-| gemini-3.5-flash | 2 | 56.0% (54.7–57.3) | 5.0 |
-| pllum-12b | 5 | 43.8% | **0** |
-| bielik-11b-v3 | 5 | 42.5% | **0** |
+| claude-opus-5 | 5 | **74.2%** (69.6–77.6) | 11.6 |
+| gpt-5.6-sol | 5 | 69.9% (64.6–75.9) | **0** |
+| gemini-3.1-pro | 3 | 64.6% | 14.0 |
+| gpt-5.6-terra | 5 | 57.2% (53.2–60.8) | **0** |
+| gemini-3.5-flash | 2 | 56.8% (55.4–58.1) | 5.0 |
+| pllum-12b | 5 | 44.3% | **0** |
+| bielik-11b-v3 | 5 | 43.0% | **0** |
 
 Full tables, findings, per-family accuracy, cost accounting, and incident log:
 `RESULTS-v0.2.md`. Notable: zero-abstention is a property of vendor training decisions,

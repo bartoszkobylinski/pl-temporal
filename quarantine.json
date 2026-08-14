@@ -1,1 +1,9 @@
-[]
+[
+ {
+  "qid": "A3v-DU-2023-556",
+  "reason": "question-ambiguous: staged commencement",
+  "evidence": "ISAP D20230556: general entry into force 2024-03-25, but six exception packages entered 2023-03-25..2023-07-01; the question asks about 2023-09-23 without specifying 'w calosci' - both TAK (partial provisions in force) and NIE (act as such not yet in force) are defensible. Verified by owner against ISAP 2026-08-14.",
+  "added": "2026-08-14",
+  "action_v03": "reword to 'czy weszla w zycie w zakresie podstawowym (ogolna data)'"
+ }
+]
