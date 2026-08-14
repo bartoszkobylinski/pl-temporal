@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this benchmark, please cite it as below."
+title: "PL-Temporal: a benchmark of temporal legal reasoning over Polish statutes"
+authors:
+  - family-names: "Kobylinski"
+    given-names: "Bartosz"
+version: "0.2"
+date-released: "2026-08-14"
+url: "TODO-repo-url-on-publication"
+license: CC-BY-4.0

@@ -1,0 +1,618 @@
+[
+ {
+  "qid": "A3v-DU-1964-93",
+  "nugget_id": "A3v-DU-1964-93-n0",
+  "kind": "regex",
+  "pattern": "\\bNIE\\b",
+  "required": true
+ },
+ {
+  "qid": "A2-DU-1974-141-2018-11-24",
+  "nugget_id": "A2-DU-1974-141-2018-11-24-n0",
+  "kind": "regex",
+  "pattern": "\\b2018\\b",
+  "required": true
+ },
+ {
+  "qid": "A2-DU-1974-141-2018-11-24",
+  "nugget_id": "A2-DU-1974-141-2018-11-24-n1",
+  "kind": "regex",
+  "pattern": "\\b917\\b",
+  "required": true
+ },
+ {
+  "qid": "A3v-DU-1960-168",
+  "nugget_id": "A3v-DU-1960-168-n0",
+  "kind": "regex",
+  "pattern": "\\bNIE\\b",
+  "required": true
+ },
+ {
+  "qid": "A1-DU-2004-535",
+  "nugget_id": "A1-DU-2004-535-n0",
+  "kind": "exact",
+  "value": "2004-04-20",
+  "required": true
+ },
+ {
+  "qid": "A1-DU-2000-1037",
+  "nugget_id": "A1-DU-2000-1037-n0",
+  "kind": "exact",
+  "value": "2001-01-01",
+  "required": true
+ },
+ {
+  "qid": "A2-DU-1997-553-2020-03-20",
+  "nugget_id": "A2-DU-1997-553-2020-03-20-n0",
+  "kind": "regex",
+  "pattern": "\\b2019\\b",
+  "required": true
+ },
+ {
+  "qid": "A2-DU-1997-553-2020-03-20",
+  "nugget_id": "A2-DU-1997-553-2020-03-20-n1",
+  "kind": "regex",
+  "pattern": "\\b1950\\b",
+  "required": true
+ },
+ {
+  "qid": "A3v-DU-1997-553",
+  "nugget_id": "A3v-DU-1997-553-n0",
+  "kind": "regex",
+  "pattern": "\\bNIE\\b",
+  "required": true
+ },
+ {
+  "qid": "A3v-DU-1997-555",
+  "nugget_id": "A3v-DU-1997-555-n0",
+  "kind": "regex",
+  "pattern": "\\bNIE\\b",
+  "required": true
+ },
+ {
+  "qid": "A4y-DU-1997-555",
+  "nugget_id": "A4y-DU-1997-555-n0",
+  "kind": "regex",
+  "pattern": "\\bTAK\\b",
+  "required": true
+ },
+ {
+  "qid": "A4y-DU-1964-296",
+  "nugget_id": "A4y-DU-1964-296-n0",
+  "kind": "regex",
+  "pattern": "\\bTAK\\b",
+  "required": true
+ },
+ {
+  "qid": "A3n-DU-1997-926",
+  "nugget_id": "A3n-DU-1997-926-n0",
+  "kind": "regex",
+  "pattern": "\\bNIE\\b",
+  "required": true
+ },
+ {
+  "qid": "A4y-DU-1997-926",
+  "nugget_id": "A4y-DU-1997-926-n0",
+  "kind": "regex",
+  "pattern": "\\bTAK\\b",
+  "required": true
+ },
+ {
+  "qid": "A1-DU-2001-1408",
+  "nugget_id": "A1-DU-2001-1408-n0",
+  "kind": "exact",
+  "value": "2002-11-10",
+  "required": true
+ },
+ {
+  "qid": "A1-DU-2005-1364",
+  "nugget_id": "A1-DU-2005-1364-n0",
+  "kind": "exact",
+  "value": "2005-09-26",
+  "required": true
+ },
+ {
+  "qid": "A3n-DU-2005-1364",
+  "nugget_id": "A3n-DU-2005-1364-n0",
+  "kind": "regex",
+  "pattern": "\\bNIE\\b",
+  "required": true
+ },
+ {
+  "qid": "A4n-DU-2005-1364",
+  "nugget_id": "A4n-DU-2005-1364-n0",
+  "kind": "regex",
+  "pattern": "\\bNIE\\b",
+  "required": true
+ },
+ {
+  "qid": "A4n-DU-2004-2782",
+  "nugget_id": "A4n-DU-2004-2782-n0",
+  "kind": "regex",
+  "pattern": "\\bNIE\\b",
+  "required": true
+ },
+ {
+  "qid": "A2-DU-2003-1590-2015-10-25",
+  "nugget_id": "A2-DU-2003-1590-2015-10-25-n0",
+  "kind": "regex",
+  "pattern": "\\b2014\\b",
+  "required": true
+ },
+ {
+  "qid": "A2-DU-2003-1590-2015-10-25",
+  "nugget_id": "A2-DU-2003-1590-2015-10-25-n1",
+  "kind": "regex",
+  "pattern": "\\b424\\b",
+  "required": true
+ },
+ {
+  "qid": "A4y-DU-2003-1590",
+  "nugget_id": "A4y-DU-2003-1590-n0",
+  "kind": "regex",
+  "pattern": "\\bTAK\\b",
+  "required": true
+ },
+ {
+  "qid": "A2-DU-2001-1198-2016-05-17",
+  "nugget_id": "A2-DU-2001-1198-2016-05-17-n0",
+  "kind": "regex",
+  "pattern": "\\b2015\\b",
+  "required": true
+ },
+ {
+  "qid": "A2-DU-2001-1198-2016-05-17",
+  "nugget_id": "A2-DU-2001-1198-2016-05-17-n1",
+  "kind": "regex",
+  "pattern": "\\b2058\\b",
+  "required": true
+ },
+ {
+  "qid": "A1-DU-2003-962",
+  "nugget_id": "A1-DU-2003-962-n0",
+  "kind": "exact",
+  "value": "2003-06-28",
+  "required": true
+ },
+ {
+  "qid": "A3n-DU-2008-902",
+  "nugget_id": "A3n-DU-2008-902-n0",
+  "kind": "regex",
+  "pattern": "\\bNIE\\b",
+  "required": true
+ },
+ {
+  "qid": "A4y-DU-2019-1403",
+  "nugget_id": "A4y-DU-2019-1403-n0",
+  "kind": "regex",
+  "pattern": "\\bTAK\\b",
+  "required": true
+ },
+ {
+  "qid": "A4n-DU-2024-1863",
+  "nugget_id": "A4n-DU-2024-1863-n0",
+  "kind": "regex",
+  "pattern": "\\bNIE\\b",
+  "required": true
+ },
+ {
+  "qid": "A1-DU-2007-328",
+  "nugget_id": "A1-DU-2007-328-n0",
+  "kind": "exact",
+  "value": "2007-04-04",
+  "required": true
+ },
+ {
+  "qid": "A3y-DU-2008-829",
+  "nugget_id": "A3y-DU-2008-829-n0",
+  "kind": "regex",
+  "pattern": "\\bTAK\\b",
+  "required": true
+ },
+ {
+  "qid": "A1-DU-2017-1133",
+  "nugget_id": "A1-DU-2017-1133-n0",
+  "kind": "exact",
+  "value": "2017-07-13",
+  "required": true
+ },
+ {
+  "qid": "A4y-DU-2010-530",
+  "nugget_id": "A4y-DU-2010-530-n0",
+  "kind": "regex",
+  "pattern": "\\bTAK\\b",
+  "required": true
+ },
+ {
+  "qid": "A1-DU-2006-1701",
+  "nugget_id": "A1-DU-2006-1701-n0",
+  "kind": "exact",
+  "value": "2007-01-03",
+  "required": true
+ },
+ {
+  "qid": "A3y-DU-2016-1203",
+  "nugget_id": "A3y-DU-2016-1203-n0",
+  "kind": "regex",
+  "pattern": "\\bTAK\\b",
+  "required": true
+ },
+ {
+  "qid": "A1-DU-2004-2784",
+  "nugget_id": "A1-DU-2004-2784-n0",
+  "kind": "exact",
+  "value": "2005-01-01",
+  "required": true
+ },
+ {
+  "qid": "A3y-DU-2015-1844",
+  "nugget_id": "A3y-DU-2015-1844-n0",
+  "kind": "regex",
+  "pattern": "\\bTAK\\b",
+  "required": true
+ },
+ {
+  "qid": "A4n-DU-2014-1198",
+  "nugget_id": "A4n-DU-2014-1198-n0",
+  "kind": "regex",
+  "pattern": "\\bNIE\\b",
+  "required": true
+ },
+ {
+  "qid": "A1-DU-2013-881",
+  "nugget_id": "A1-DU-2013-881-n0",
+  "kind": "exact",
+  "value": "2013-08-17",
+  "required": true
+ },
+ {
+  "qid": "A4y-DU-2001-537",
+  "nugget_id": "A4y-DU-2001-537-n0",
+  "kind": "regex",
+  "pattern": "\\bTAK\\b",
+  "required": true
+ },
+ {
+  "qid": "A3v-DU-2017-38",
+  "nugget_id": "A3v-DU-2017-38-n0",
+  "kind": "regex",
+  "pattern": "\\bNIE\\b",
+  "required": true
+ },
+ {
+  "qid": "A3n-DU-2021-2349",
+  "nugget_id": "A3n-DU-2021-2349-n0",
+  "kind": "regex",
+  "pattern": "\\bNIE\\b",
+  "required": true
+ },
+ {
+  "qid": "A1-DU-2004-624",
+  "nugget_id": "A1-DU-2004-624-n0",
+  "kind": "exact",
+  "value": "2004-05-05",
+  "required": true
+ },
+ {
+  "qid": "A4n-DU-2004-624",
+  "nugget_id": "A4n-DU-2004-624-n0",
+  "kind": "regex",
+  "pattern": "\\bNIE\\b",
+  "required": true
+ },
+ {
+  "qid": "A3v-DU-2015-1923",
+  "nugget_id": "A3v-DU-2015-1923-n0",
+  "kind": "regex",
+  "pattern": "\\bNIE\\b",
+  "required": true
+ },
+ {
+  "qid": "A1-DU-2021-904",
+  "nugget_id": "A1-DU-2021-904-n0",
+  "kind": "exact",
+  "value": "2021-05-15",
+  "required": true
+ },
+ {
+  "qid": "A4y-DU-2002-804",
+  "nugget_id": "A4y-DU-2002-804-n0",
+  "kind": "regex",
+  "pattern": "\\bTAK\\b",
+  "required": true
+ },
+ {
+  "qid": "A4n-DU-2002-804",
+  "nugget_id": "A4n-DU-2002-804-n0",
+  "kind": "regex",
+  "pattern": "\\bNIE\\b",
+  "required": true
+ },
+ {
+  "qid": "A2-DU-2001-353-2016-01-27",
+  "nugget_id": "A2-DU-2001-353-2016-01-27-n0",
+  "kind": "regex",
+  "pattern": "\\b2015\\b",
+  "required": true
+ },
+ {
+  "qid": "A2-DU-2001-353-2016-01-27",
+  "nugget_id": "A2-DU-2001-353-2016-01-27-n1",
+  "kind": "regex",
+  "pattern": "\\b103\\b",
+  "required": true
+ },
+ {
+  "qid": "A4y-DU-2001-353",
+  "nugget_id": "A4y-DU-2001-353-n0",
+  "kind": "regex",
+  "pattern": "\\bTAK\\b",
+  "required": true
+ },
+ {
+  "qid": "A4n-DU-2003-2050",
+  "nugget_id": "A4n-DU-2003-2050-n0",
+  "kind": "regex",
+  "pattern": "\\bNIE\\b",
+  "required": true
+ },
+ {
+  "qid": "A1-DU-2015-1830",
+  "nugget_id": "A1-DU-2015-1830-n0",
+  "kind": "exact",
+  "value": "2016-01-01",
+  "required": true
+ },
+ {
+  "qid": "A3y-DU-2015-1830",
+  "nugget_id": "A3y-DU-2015-1830-n0",
+  "kind": "regex",
+  "pattern": "\\bTAK\\b",
+  "required": true
+ },
+ {
+  "qid": "A4n-DU-2014-897",
+  "nugget_id": "A4n-DU-2014-897-n0",
+  "kind": "regex",
+  "pattern": "\\bNIE\\b",
+  "required": true
+ },
+ {
+  "qid": "A2-DU-2006-1539-2014-10-05",
+  "nugget_id": "A2-DU-2006-1539-2014-10-05-n0",
+  "kind": "regex",
+  "pattern": "\\b2013\\b",
+  "required": true
+ },
+ {
+  "qid": "A2-DU-2006-1539-2014-10-05",
+  "nugget_id": "A2-DU-2006-1539-2014-10-05-n1",
+  "kind": "regex",
+  "pattern": "\\b144\\b",
+  "required": true
+ },
+ {
+  "qid": "A4y-DU-2006-1539",
+  "nugget_id": "A4y-DU-2006-1539-n0",
+  "kind": "regex",
+  "pattern": "\\bTAK\\b",
+  "required": true
+ },
+ {
+  "qid": "A1-DU-2014-1682",
+  "nugget_id": "A1-DU-2014-1682-n0",
+  "kind": "exact",
+  "value": "2015-03-01",
+  "required": true
+ },
+ {
+  "qid": "A3y-DU-2008-1389",
+  "nugget_id": "A3y-DU-2008-1389-n0",
+  "kind": "regex",
+  "pattern": "\\bTAK\\b",
+  "required": true
+ },
+ {
+  "qid": "A2-DU-2010-1228-2017-05-14",
+  "nugget_id": "A2-DU-2010-1228-2017-05-14-n0",
+  "kind": "regex",
+  "pattern": "\\b2016\\b",
+  "required": true
+ },
+ {
+  "qid": "A2-DU-2010-1228-2017-05-14",
+  "nugget_id": "A2-DU-2010-1228-2017-05-14-n1",
+  "kind": "regex",
+  "pattern": "\\b1167\\b",
+  "required": true
+ },
+ {
+  "qid": "A3y-DU-2010-1228",
+  "nugget_id": "A3y-DU-2010-1228-n0",
+  "kind": "regex",
+  "pattern": "\\bTAK\\b",
+  "required": true
+ },
+ {
+  "qid": "A2-DU-2002-558-2015-12-29",
+  "nugget_id": "A2-DU-2002-558-2015-12-29-n0",
+  "kind": "regex",
+  "pattern": "\\b2014\\b",
+  "required": true
+ },
+ {
+  "qid": "A2-DU-2002-558-2015-12-29",
+  "nugget_id": "A2-DU-2002-558-2015-12-29-n1",
+  "kind": "regex",
+  "pattern": "\\b333\\b",
+  "required": true
+ },
+ {
+  "qid": "A1-DU-2006-874",
+  "nugget_id": "A1-DU-2006-874-n0",
+  "kind": "exact",
+  "value": "2006-07-29",
+  "required": true
+ },
+ {
+  "qid": "A3y-DU-2020-179",
+  "nugget_id": "A3y-DU-2020-179-n0",
+  "kind": "regex",
+  "pattern": "\\bTAK\\b",
+  "required": true
+ },
+ {
+  "qid": "A1-DU-2006-1533",
+  "nugget_id": "A1-DU-2006-1533-n0",
+  "kind": "exact",
+  "value": "2006-12-06",
+  "required": true
+ },
+ {
+  "qid": "A3y-DU-2021-41",
+  "nugget_id": "A3y-DU-2021-41-n0",
+  "kind": "regex",
+  "pattern": "\\bTAK\\b",
+  "required": true
+ },
+ {
+  "qid": "A1-DU-2012-1091",
+  "nugget_id": "A1-DU-2012-1091-n0",
+  "kind": "exact",
+  "value": "2012-10-17",
+  "required": true
+ },
+ {
+  "qid": "A3n-DU-2012-1091",
+  "nugget_id": "A3n-DU-2012-1091-n0",
+  "kind": "regex",
+  "pattern": "\\bNIE\\b",
+  "required": true
+ },
+ {
+  "qid": "A1-DU-2008-226",
+  "nugget_id": "A1-DU-2008-226-n0",
+  "kind": "exact",
+  "value": "2008-03-22",
+  "required": true
+ },
+ {
+  "qid": "A1-DU-2010-1129",
+  "nugget_id": "A1-DU-2010-1129-n0",
+  "kind": "exact",
+  "value": "2010-09-25",
+  "required": true
+ },
+ {
+  "qid": "A3n-DU-2022-1719",
+  "nugget_id": "A3n-DU-2022-1719-n0",
+  "kind": "regex",
+  "pattern": "\\bNIE\\b",
+  "required": true
+ },
+ {
+  "qid": "A1-DU-2011-202",
+  "nugget_id": "A1-DU-2011-202-n0",
+  "kind": "exact",
+  "value": "2011-03-08",
+  "required": true
+ },
+ {
+  "qid": "A1-DU-2015-1163",
+  "nugget_id": "A1-DU-2015-1163-n0",
+  "kind": "exact",
+  "value": "2015-08-28",
+  "required": true
+ },
+ {
+  "qid": "A3n-DU-2010-1459",
+  "nugget_id": "A3n-DU-2010-1459-n0",
+  "kind": "regex",
+  "pattern": "\\bNIE\\b",
+  "required": true
+ },
+ {
+  "qid": "A4y-DU-2009-740",
+  "nugget_id": "A4y-DU-2009-740-n0",
+  "kind": "regex",
+  "pattern": "\\bTAK\\b",
+  "required": true
+ },
+ {
+  "qid": "A4n-DU-2009-740",
+  "nugget_id": "A4n-DU-2009-740-n0",
+  "kind": "regex",
+  "pattern": "\\bNIE\\b",
+  "required": true
+ },
+ {
+  "qid": "A3v-DU-2016-780",
+  "nugget_id": "A3v-DU-2016-780-n0",
+  "kind": "regex",
+  "pattern": "\\bNIE\\b",
+  "required": true
+ },
+ {
+  "qid": "A1-DU-2015-892",
+  "nugget_id": "A1-DU-2015-892-n0",
+  "kind": "exact",
+  "value": "2015-07-11",
+  "required": true
+ },
+ {
+  "qid": "A3n-DU-2015-892",
+  "nugget_id": "A3n-DU-2015-892-n0",
+  "kind": "regex",
+  "pattern": "\\bNIE\\b",
+  "required": true
+ },
+ {
+  "qid": "A1-DU-2014-1071",
+  "nugget_id": "A1-DU-2014-1071-n0",
+  "kind": "exact",
+  "value": "2014-08-26",
+  "required": true
+ },
+ {
+  "qid": "A4n-DU-2005-1412",
+  "nugget_id": "A4n-DU-2005-1412-n0",
+  "kind": "regex",
+  "pattern": "\\bNIE\\b",
+  "required": true
+ },
+ {
+  "qid": "A4n-DU-2019-2294",
+  "nugget_id": "A4n-DU-2019-2294-n0",
+  "kind": "regex",
+  "pattern": "\\bNIE\\b",
+  "required": true
+ },
+ {
+  "qid": "A1-DU-2004-1963",
+  "nugget_id": "A1-DU-2004-1963-n0",
+  "kind": "exact",
+  "value": "2004-10-01",
+  "required": true
+ },
+ {
+  "qid": "A3v-DU-2023-556",
+  "nugget_id": "A3v-DU-2023-556-n0",
+  "kind": "regex",
+  "pattern": "\\bNIE\\b",
+  "required": true
+ },
+ {
+  "qid": "A4n-DU-2023-556",
+  "nugget_id": "A4n-DU-2023-556-n0",
+  "kind": "regex",
+  "pattern": "\\bNIE\\b",
+  "required": true
+ },
+ {
+  "qid": "A4y-DU-2002-1184",
+  "nugget_id": "A4y-DU-2002-1184-n0",
+  "kind": "regex",
+  "pattern": "\\bTAK\\b",
+  "required": true
+ }
+]
