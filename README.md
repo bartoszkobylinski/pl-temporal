@@ -61,8 +61,7 @@ dataset was in its training data — please report such a finding as an issue.
 
 Source of legal texts and metadata: Internetowy System Aktów Prawnych (ISAP),
 Kancelaria Sejmu RP — https://isap.sejm.gov.pl — and the Sejm ELI API —
-https://api.sejm.gov.pl / https://eli.gov.pl. Retrieved: 2026-08 (exact per-release
-retrieval date: TODO before publication). The texts have been processed (fragment
+https://api.sejm.gov.pl / https://eli.gov.pl. Retrieved: 2026-08-12/13 (dataset build dates). The texts have been processed (fragment
 extraction, paraphrase, derived dates); they are informational only and are not a
 source of law. Authentic texts are solely those promulgated in Dziennik Ustaw /
 Monitor Polski. This benchmark is not legal advice; answers reflect the law as
