@@ -1,0 +1,34 @@
+[
+ {
+  "qid": "A1-DU-2004-535",
+  "reason": "staged commencement - the question has no single correct answer",
+  "evidence": "art. 176 of the act, verbatim: 'Ustawa wchodzi w życie po upływie 14 dni od dnia ogłoszenia, z tym że: 1) art. 23 ust. 5, 6 i 17 [...] stosuje się od dnia ogłoszenia ustawy; 2) ...'. ELI entryIntoForce=2004-04-20 is the general date; the model answered 2004-05-01 citing the same article's staged dates. Both defensible.",
+  "detected": "2026-08-13",
+  "detected_by": "first claude-opus-5 run + manual verification against text.html",
+  "disposition": "reformulate in v0.2 to ask for the general (default) commencement date explicitly"
+ },
+ {
+  "qid": "A1-DU-2007-328",
+  "reason": "staged commencement - the question has no single correct answer",
+  "evidence": "commencement clause carries 'z wyjątkiem art. ...' carve-outs; gold 2007-04-04 is only the general date",
+  "detected": "2026-08-13",
+  "detected_by": "carve-out sweep over A1 acts' text.html (z wyjątkiem / z tym że)",
+  "disposition": "reformulate in v0.2"
+ },
+ {
+  "qid": "A1-DU-2001-1408",
+  "reason": "staged commencement - the question has no single correct answer",
+  "evidence": "commencement clause: 'Ustawa wchodzi w życie po upływie 12 miesięcy od dnia ogłoszenia, z wyjątkiem przepisów art. ...'; gold 2002-11-10 is only the general date",
+  "detected": "2026-08-13",
+  "detected_by": "carve-out sweep over A1 acts' text.html",
+  "disposition": "reformulate in v0.2"
+ },
+ {
+  "qid": "A4n-DU-2004-2784",
+  "reason": "negative anchored on an act that was later REPEALED - amendment vs repeal ambiguity",
+  "evidence": "ELI edges end 2010-01-01 (anchor 2010-04-01), so gold NIE is edge-correct; but the act's status is 'uchylony' and all six evaluated models unanimously answered TAK, reading the repeal/replacement as change. Unanimous disagreement with a derived gold marks the question, not the models.",
+  "detected": "2026-08-13",
+  "detected_by": "cross-model agreement analysis (6/6 against gold) + manual ELI verification",
+  "disposition": "v0.2: A4 negatives must exclude acts repealed after the anchor, or the prompt must say 'nowelizowana (nie licząc uchylenia)'"
+ }
+]

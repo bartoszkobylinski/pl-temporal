@@ -18,7 +18,7 @@ from collections import defaultdict
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from score_nuggets import hit, norm  # one scoring implementation, never two
+from score_nuggets import hit, norm, bucket_of  # one scoring implementation, never two
 
 
 def load(responses_dir):
@@ -62,17 +62,32 @@ def main(responses_dir="responses"):
     models = sorted(runs)
     print(f"models: {', '.join(models)}   questions: {len(Q)}\n")
 
-    correct = defaultdict(dict)   # qid -> model -> bool
+    correct = defaultdict(dict)   # qid -> model -> bool, ANSWERED responses only
+    bucketed = defaultdict(dict)  # qid -> model -> bucket (abstained/error/...)
     for qid, q in Q.items():
         for m in models:
             ans = runs[m].get(qid)
             if ans is None:
                 continue
+            # The scorer buckets abstention/truncation/error BEFORE nugget matching;
+            # the analyzer must do the same, or "NIE WIEM" matches a gold-NIE regex
+            # and an abstention is counted as a correct answer (bug found 2026-08-15;
+            # forensic diff in analysis/analyzer-abstention-incident.md).
+            b = bucket_of(ans)
+            if b:
+                bucketed[qid][m] = b
+                continue
             ngs = NG[qid]
             correct[qid][m] = all(hit(n, ans) for n in ngs if n.get("required", True))
 
     all_wrong = [qid for qid in Q if correct[qid] and not any(correct[qid].values())]
-    all_right = [qid for qid in Q if correct[qid] and all(correct[qid].values())]
+    # no-signal candidates require EVERY model to have answered (not abstained,
+    # not errored) and answered correctly - a bucketed response is signal, not noise
+    all_right = [qid for qid in Q
+                 if len(correct[qid]) == len(models) and all(correct[qid].values())]
+    n_bucketed = sum(len(v) for v in bucketed.values())
+    if n_bucketed:
+        print(f"(bucketed responses excluded from correctness labels: {n_bucketed})\n")
 
     print(f"=== 1. failed by EVERY model: {len(all_wrong)} — review these first ===")
     for qid in all_wrong:
@@ -94,7 +109,8 @@ def main(responses_dir="responses"):
     for qid, q in Q.items():
         for m in models:
             ans = runs[m].get(qid)
-            if ans and not correct[qid].get(m) and gold_visible(q, ans):
+            # bucketed answers are not scorer failures - only answered-and-wrong count
+            if ans and m in correct[qid] and not correct[qid][m] and gold_visible(q, ans):
                 fn += 1
                 print(f"  [{q['regime']}] {qid} / {m}")
                 print(f"      gold: {q['gold'].get('canonical_answer')}")

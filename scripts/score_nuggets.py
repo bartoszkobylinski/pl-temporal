@@ -101,7 +101,13 @@ def score_one(path, Q, NG):
 def report_one(st, total):
     print(f"scored {st['n']}/{total} questions"
           + (f"  (MISSING {len(st['missing'])})" if st["missing"] else ""))
-    print(f"strict accuracy : {st['strict']}/{st['n']} = {100*st['strict']/max(st['n'],1):.1f}%")
+    # Three metrics, three questions (no single headline without a utility function):
+    #   coverage          - on what fraction of questions does the model commit to an answer
+    #   strict accuracy   - selective precision: how often is it right WHEN it answers
+    #   end-to-end acc    - usefulness if the user needs an answer to every question
+    print(f"coverage        : {st['n']}/{total} = {100*st['n']/max(total,1):.1f}%")
+    print(f"strict accuracy : {st['strict']}/{st['n']} = {100*st['strict']/max(st['n'],1):.1f}%  (on answered)")
+    print(f"end-to-end acc  : {st['strict']}/{total} = {100*st['strict']/max(total,1):.1f}%  (abstentions/errors count against)")
     cn, cd = st["cov"]
     print(f"nugget coverage : {cn}/{cd} = {100*cn/max(cd,1):.1f}%")
     for r in sorted(st["per_regime"]):
@@ -135,9 +141,15 @@ def main(paths):
     if len(paths) < 2:
         return
     accs = [100 * st["strict"] / max(st["n"], 1) for st, _ in results]
+    e2e = [100 * st["strict"] / max(len(Q), 1) for st, _ in results]
+    cov = [100 * st["n"] / max(len(Q), 1) for st, _ in results]
     print(f"\n=== aggregate over {len(paths)} draws ===")
+    print(f"coverage        : mean {sum(cov)/len(cov):.1f}%  "
+          f"min {min(cov):.1f}%  max {max(cov):.1f}%")
     print(f"strict accuracy : mean {sum(accs)/len(accs):.1f}%  "
-          f"min {min(accs):.1f}%  max {max(accs):.1f}%")
+          f"min {min(accs):.1f}%  max {max(accs):.1f}%  (on answered)")
+    print(f"end-to-end acc  : mean {sum(e2e)/len(e2e):.1f}%  "
+          f"min {min(e2e):.1f}%  max {max(e2e):.1f}%")
     abst = [len(st["buckets"].get("abstained", [])) for st, _ in results]
     print(f"abstained       : mean {sum(abst)/len(abst):.1f}  "
           f"min {min(abst)}  max {max(abst)}")

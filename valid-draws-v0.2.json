@@ -1,0 +1,54 @@
+{
+ "generated": "2026-08-15",
+ "rule": "draws excluded when killed by provider quota/credit exhaustion (see RESULTS incidents log); scoring uses only the draws below",
+ "valid_draws": {
+  "bielik-11b-v3": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "pllum-12b": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "claude-opus-5": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "gpt-5.6-terra": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "gpt-5.6-sol": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "gemini-3.1-pro": [
+   1,
+   2,
+   3
+  ],
+  "gemini-3.5-flash": [
+   1,
+   2
+  ],
+  "gpt-5": [
+   1
+  ],
+  "gemini-3-flash": []
+ }
+}

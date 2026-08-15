@@ -1,0 +1,366 @@
+models: bielik-11b-v3.draw1, bielik-11b-v3.draw2, bielik-11b-v3.draw3, bielik-11b-v3.draw4, bielik-11b-v3.draw5, claude-opus-5.draw1, claude-opus-5.draw2, claude-opus-5.draw3, claude-opus-5.draw4, claude-opus-5.draw5, gemini-3.1-pro.draw1, gemini-3.1-pro.draw2, gemini-3.1-pro.draw3, gemini-3.5-flash.draw1, gemini-3.5-flash.draw2, gpt-5.6-sol.draw1, gpt-5.6-sol.draw2, gpt-5.6-sol.draw3, gpt-5.6-sol.draw4, gpt-5.6-sol.draw5, gpt-5.6-terra.draw1, gpt-5.6-terra.draw2, gpt-5.6-terra.draw3, gpt-5.6-terra.draw4, gpt-5.6-terra.draw5, gpt-5.draw1, pllum-12b.draw1, pllum-12b.draw2, pllum-12b.draw3, pllum-12b.draw4, pllum-12b.draw5   questions: 80
+
+=== 1. failed by EVERY model: 6 — review these first ===
+  [A1] A1-DU-2001-1408
+      gold: 2002-11-10
+      bielik-11b-v3.draw1: Ustawa z dnia 6 września 2001 r. o materiałach i wyrobach przeznaczonych do kontaktu z ż
+      bielik-11b-v3.draw2: Ustawa z dnia 6 września 2001 r. o materiałach i wyrobach przeznaczonych do kontaktu z ż
+      bielik-11b-v3.draw3: Ustawa z dnia 6 września 2001 r. o materiałach i wyrobach przeznaczonych do kontaktu z ż
+      bielik-11b-v3.draw4: Ustawa z dnia 6 września 2001 r. o materiałach i wyrobach przeznaczonych do kontaktu z ż
+      bielik-11b-v3.draw5: Ustawa z dnia 6 września 2001 r. o materiałach i wyrobach przeznaczonych do kontaktu z ż
+      claude-opus-5.draw1: **2003-01-01** Ustawa z dnia 6 września 2001 r. o materiałach i wyrobach przeznaczonych 
+      claude-opus-5.draw2: NIE WIEM Nie mam pewności co do dokładnej daty wejścia w życie tej ustawy (Dz.U. 2001 nr
+      claude-opus-5.draw3: **2003-01-01**
+      claude-opus-5.draw4: NIE WIEM — nie mam pewności co do przepisu końcowego tej ustawy (Dz.U. 2001 nr 128 poz. 
+      claude-opus-5.draw5: **2003-01-01** Ustawa z dnia 6 września 2001 r. o materiałach i wyrobach przeznaczonych 
+      gemini-3.1-pro.draw1: 2002-05-17
+      gemini-3.1-pro.draw2: 2002-05-17
+      gemini-3.1-pro.draw3: 2002-05-17
+      gemini-3.5-flash.draw1: 2001-11-24
+      gemini-3.5-flash.draw2: 2001-11-24
+      gpt-5.6-sol.draw1: 2002-02-10
+      gpt-5.6-sol.draw2: 2002-02-10
+      gpt-5.6-sol.draw3: 2002-02-10
+      gpt-5.6-sol.draw4: 2002-01-01
+      gpt-5.6-sol.draw5: 2002-02-10
+      gpt-5.6-terra.draw1: 2001-11-10
+      gpt-5.6-terra.draw2: 2001-11-22
+      gpt-5.6-terra.draw3: 2001-11-22
+      gpt-5.6-terra.draw4: 2001-11-22
+      gpt-5.6-terra.draw5: 2001-10-26
+      gpt-5.draw1      : NIE WIEM
+      pllum-12b.draw1  : Ustawa weszła w życie 13 stycznia 2002 r.
+      pllum-12b.draw2  : Ustawa weszła w życie 15 listopada 2002 r.
+      pllum-12b.draw3  : Ustawa weszła w życie 15 listopada 2002 r.
+      pllum-12b.draw4  : Ustawa weszła w życie 15 listopada 2002 r.
+      pllum-12b.draw5  : Ustawa weszła w życie 15 listopada 2002 r.
+  [A1] A1-DU-2012-1091
+      gold: 2012-10-17
+      bielik-11b-v3.draw1: 2012-10-23
+      bielik-11b-v3.draw2: 2012-10-23
+      bielik-11b-v3.draw3: 2012-10-23
+      bielik-11b-v3.draw4: 2012-10-23
+      bielik-11b-v3.draw5: 2012-10-23
+      claude-opus-5.draw1: NIE WIEM
+      claude-opus-5.draw2: **2013-01-06** Ustawa z 31 sierpnia 2012 r. o zmianie ustawy - Kodeks postępowania karne
+      claude-opus-5.draw3: **2012-10-20** Ustawa z dnia 31 sierpnia 2012 r. o zmianie ustawy - Kodeks postępowania 
+      claude-opus-5.draw4: NIE WIEM
+      claude-opus-5.draw5: NIE WIEM
+      gemini-3.1-pro.draw1: 2012-10-20
+      gemini-3.1-pro.draw2: 2012-10-20
+      gemini-3.1-pro.draw3: NIE WIEM.
+      gemini-3.5-flash.draw1: 2012-10-25
+      gemini-3.5-flash.draw2: 2012-10-26
+      gpt-5.6-sol.draw1: 2013-01-01
+      gpt-5.6-sol.draw2: 2012-10-19
+      gpt-5.6-sol.draw3: 2012-11-05
+      gpt-5.6-sol.draw4: 2012-10-20
+      gpt-5.6-sol.draw5: 2013-01-01
+      gpt-5.6-terra.draw1: 2012-10-02
+      gpt-5.6-terra.draw2: 2013-01-01
+      gpt-5.6-terra.draw3: 2012-10-03
+      gpt-5.6-terra.draw4: 2012-10-19
+      gpt-5.6-terra.draw5: 2012-10-04
+      gpt-5.draw1      : NIE WIEM
+      pllum-12b.draw1  : Ustawa weszła w życie 2013-01-01.
+      pllum-12b.draw2  : Ustawa weszła w życie 2013-01-01.
+      pllum-12b.draw3  : Ustawa weszła w życie 2013-01-01.
+      pllum-12b.draw4  : Ustawa weszła w życie 2013-01-01.
+      pllum-12b.draw5  : Ustawa weszła w życie 2013-01-01.
+  [A1] A1-DU-2021-904
+      gold: 2021-05-15
+      bielik-11b-v3.draw1: Ustawa z dnia 15 kwietnia 2021 r. o zmianie ustawy o płatnościach w ramach systemów wspa
+      bielik-11b-v3.draw2: Ustawa z dnia 15 kwietnia 2021 r. o zmianie ustawy o płatnościach w ramach systemów wspa
+      bielik-11b-v3.draw3: Ustawa z dnia 15 kwietnia 2021 r. o zmianie ustawy o płatnościach w ramach systemów wspa
+      bielik-11b-v3.draw4: Ustawa z dnia 15 kwietnia 2021 r. o zmianie ustawy o płatnościach w ramach systemów wspa
+      bielik-11b-v3.draw5: Ustawa z dnia 15 kwietnia 2021 r. o zmianie ustawy o płatnościach w ramach systemów wspa
+      claude-opus-5.draw1: **2021-05-18** — ustawa (Dz.U. 2021 poz. 904) weszła w życie co do zasady z dniem następ
+      claude-opus-5.draw2: **2021-05-18** - ustawa (Dz.U. 2021 poz. 904, ogłoszona 17 maja 2021 r.) weszła w życie 
+      claude-opus-5.draw3: **2021-05-18** — ustawa (Dz.U. 2021 poz. 904, ogłoszona 17 maja 2021 r.) weszła w życie 
+      claude-opus-5.draw4: **2021-05-18** — ustawa (Dz.U. 2021 poz. 904, ogłoszona 17 maja 2021 r.) weszła w życie 
+      claude-opus-5.draw5: **2021-05-18** - ustawa (Dz.U. 2021 poz. 904, ogłoszona 17 maja 2021 r.) weszła w życie 
+      gemini-3.1-pro.draw1: 2021-05-18
+      gemini-3.1-pro.draw2: 2021-05-18
+      gemini-3.1-pro.draw3: 2021-05-18
+      gemini-3.5-flash.draw1: 2021-05-18
+      gemini-3.5-flash.draw2: 2021-05-18
+      gpt-5.6-sol.draw1: 2021-05-20
+      gpt-5.6-sol.draw2: 2021-05-20
+      gpt-5.6-sol.draw3: 2021-05-20
+      gpt-5.6-sol.draw4: 2021-06-03
+      gpt-5.6-sol.draw5: 2021-05-21
+      gpt-5.6-terra.draw1: 2021-06-03
+      gpt-5.6-terra.draw2: 2021-05-21
+      gpt-5.6-terra.draw3: 2021-05-19
+      gpt-5.6-terra.draw4: 2021-05-18
+      gpt-5.6-terra.draw5: 2021-06-02
+      gpt-5.draw1      : NIE WIEM
+      pllum-12b.draw1  : Ustawa weszła w życie 16 maja 2021 r.
+      pllum-12b.draw2  : Ustawa weszła w życie 16 maja 2021 r.
+      pllum-12b.draw3  : Ustawa weszła w życie 16 maja 2021 r.
+      pllum-12b.draw4  : Ustawa weszła w życie 16 maja 2021 r.
+      pllum-12b.draw5  : Ustawa weszła w życie 16 maja 2021 r.
+  [A1] A1-DU-2006-874
+      gold: 2006-07-29
+      bielik-11b-v3.draw1: Ustawa z dnia 12 maja 2006 r. o ratyfikacji Umowy między Rządem Rzeczypospolitej Polskie
+      bielik-11b-v3.draw2: Ustawa z dnia 12 maja 2006 r. o ratyfikacji Umowy między Rządem Rzeczypospolitej Polskie
+      bielik-11b-v3.draw3: Ustawa z dnia 12 maja 2006 r. o ratyfikacji Umowy między Rządem Rzeczypospolitej Polskie
+      bielik-11b-v3.draw4: Ustawa z dnia 12 maja 2006 r. o ratyfikacji Umowy między Rządem Rzeczypospolitej Polskie
+      bielik-11b-v3.draw5: Ustawa z dnia 12 maja 2006 r. o ratyfikacji Umowy między Rządem Rzeczypospolitej Polskie
+      claude-opus-5.draw1: NIE WIEM
+      claude-opus-5.draw2: NIE WIEM
+      claude-opus-5.draw3: NIE WIEM — nie mam pewności co do daty ogłoszenia tej ustawy w Dzienniku Ustaw, a od nie
+      claude-opus-5.draw4: NIE WIEM Nie mam pewnej informacji o dacie ogłoszenia tej ustawy w Dzienniku Ustaw, a od
+      claude-opus-5.draw5: NIE WIEM - nie mam pewnych danych o dacie ogłoszenia tej ustawy w Dzienniku Ustaw, a wię
+      gemini-3.1-pro.draw1: 2006-07-12
+      gemini-3.1-pro.draw2: 2006-07-12
+      gemini-3.1-pro.draw3: 2006-07-12
+      gemini-3.5-flash.draw1: 2006-07-05
+      gemini-3.5-flash.draw2: 2006-07-05
+      gpt-5.6-sol.draw1: 2006-09-01
+      gpt-5.6-sol.draw2: 2006-06-24
+      gpt-5.6-sol.draw3: 2006-06-28
+      gpt-5.6-sol.draw4: 2006-06-24
+      gpt-5.6-sol.draw5: 2006-06-24
+      gpt-5.6-terra.draw1: 2006-06-16
+      gpt-5.6-terra.draw2: 2006-07-01
+      gpt-5.6-terra.draw3: 2006-06-30
+      gpt-5.6-terra.draw4: 2006-06-24
+      gpt-5.6-terra.draw5: 2006-06-28
+      gpt-5.draw1      : NIE WIEM
+      pllum-12b.draw1  : Ustawa weszła w życie 2006-06-23.
+      pllum-12b.draw2  : Ustawa weszła w życie 2006-06-23.
+      pllum-12b.draw3  : Ustawa weszła w życie 2006-06-23.
+      pllum-12b.draw4  : Ustawa weszła w życie 2006-06-23.
+      pllum-12b.draw5  : Ustawa weszła w życie 2006-06-23.
+  [A1] A1-DU-2006-1533
+      gold: 2006-12-06
+      bielik-11b-v3.draw1: Ustawa z dnia 22 września 2006 r. weszła w życie 2006-10-19.
+      bielik-11b-v3.draw2: Ustawa z dnia 22 września 2006 r. weszła w życie 2006-10-19.
+      bielik-11b-v3.draw3: Ustawa z dnia 22 września 2006 r. weszła w życie 2006-10-19.
+      bielik-11b-v3.draw4: Ustawa z dnia 22 września 2006 r. weszła w życie 2006-10-19.
+      bielik-11b-v3.draw5: Ustawa z dnia 22 września 2006 r. weszła w życie 2006-10-19.
+      claude-opus-5.draw1: NIE WIEM - nie mam pewności co do daty ogłoszenia tej ustawy w Dzienniku Ustaw (ustawy r
+      claude-opus-5.draw2: NIE WIEM - nie mam pewnej informacji o dacie publikacji tej ustawy w Dzienniku Ustaw, a 
+      claude-opus-5.draw3: **2006-12-02** - ustawa weszła w życie po upływie 14 dni od dnia ogłoszenia (Dz.U. 2006 
+      claude-opus-5.draw4: NIE WIEM (nie mam pewności co do dokładnej daty; ustawa ta — zgodnie z typowym rozwiązan
+      claude-opus-5.draw5: NIE WIEM — nie mam pewnych danych o dacie ogłoszenia tej ustawy w Dzienniku Ustaw, a od 
+      gemini-3.1-pro.draw1: 2006-11-08
+      gemini-3.1-pro.draw2: 2006-11-08
+      gemini-3.1-pro.draw3: 2006-11-08
+      gemini-3.5-flash.draw1: 2006-11-29
+      gemini-3.5-flash.draw2: 2006-11-29
+      gpt-5.6-sol.draw1: 2006-12-01
+      gpt-5.6-sol.draw2: 2006-12-01
+      gpt-5.6-sol.draw3: 2006-12-02
+      gpt-5.6-sol.draw4: 2006-12-02
+      gpt-5.6-sol.draw5: 2006-12-01
+      gpt-5.6-terra.draw1: 2006-11-01
+      gpt-5.6-terra.draw2: 2006-11-04
+      gpt-5.6-terra.draw3: 2006-11-08
+      gpt-5.6-terra.draw4: 2006-11-23
+      gpt-5.6-terra.draw5: 2006-11-30
+      gpt-5.draw1      : NIE WIEM
+      pllum-12b.draw1  : Ustawa weszła w życie 20 października 2006 r.
+      pllum-12b.draw2  : Ustawa weszła w życie 20 października 2006 r.
+      pllum-12b.draw3  : Ustawa weszła w życie 20 października 2006 r.
+      pllum-12b.draw4  : Ustawa weszła w życie 20 października 2006 r.
+      pllum-12b.draw5  : Ustawa weszła w życie 20 października 2006 r.
+  [A1] A1-DU-2014-1071
+      gold: 2014-08-26
+      bielik-11b-v3.draw1: Ustawa z dnia 11 lipca 2014 r. o zmianie ustawy o Krajowej Szkole Sądownictwa i Prokurat
+      bielik-11b-v3.draw2: Ustawa z dnia 11 lipca 2014 r. o zmianie ustawy o Krajowej Szkole Sądownictwa i Prokurat
+      bielik-11b-v3.draw3: Ustawa z dnia 11 lipca 2014 r. o zmianie ustawy o Krajowej Szkole Sądownictwa i Prokurat
+      bielik-11b-v3.draw4: Ustawa z dnia 11 lipca 2014 r. o zmianie ustawy o Krajowej Szkole Sądownictwa i Prokurat
+      bielik-11b-v3.draw5: Ustawa z dnia 11 lipca 2014 r. o zmianie ustawy o Krajowej Szkole Sądownictwa i Prokurat
+      claude-opus-5.draw1: NIE WIEM
+      claude-opus-5.draw2: **2015-01-01** - ustawa (Dz.U. 2014 poz. 1071) weszła w życie z dniem 1 stycznia 2015 r.
+      claude-opus-5.draw3: **2014-08-27** - ustawa (Dz.U. 2014 poz. 1071, ogłoszona 12 sierpnia 2014 r.) weszła w ż
+      claude-opus-5.draw4: NIE WIEM - nie mam pewności co do dokładnej daty wejścia w życie tej ustawy (Dz.U. 2014 
+      claude-opus-5.draw5: NIE WIEM
+      gemini-3.1-pro.draw1: 2014-10-10
+      gemini-3.1-pro.draw2: 2014-10-10
+      gemini-3.1-pro.draw3: 2014-10-10
+      gemini-3.5-flash.draw1: 2014-09-13
+      gemini-3.5-flash.draw2: 2014-09-13
+      gpt-5.6-sol.draw1: 2014-08-27
+      gpt-5.6-sol.draw2: 2014-08-27
+      gpt-5.6-sol.draw3: 2014-08-27
+      gpt-5.6-sol.draw4: 2014-08-27
+      gpt-5.6-sol.draw5: 2014-08-27
+      gpt-5.6-terra.draw1: 2014-08-21
+      gpt-5.6-terra.draw2: 2014-09-04
+      gpt-5.6-terra.draw3: 2014-08-23
+      gpt-5.6-terra.draw4: 2014-08-23
+      gpt-5.6-terra.draw5: 2014-08-23
+      gpt-5.draw1      : NIE WIEM
+      pllum-12b.draw1  : Ustawa z dnia 11 lipca 2014 r. o zmianie ustawy o Krajowej Szkole Sądownictwa i Prokurat
+      pllum-12b.draw2  : Ustawa z dnia 11 lipca 2014 r. o zmianie ustawy o Krajowej Szkole Sądownictwa i Prokurat
+      pllum-12b.draw3  : Ustawa z dnia 11 lipca 2014 r. o zmianie ustawy o Krajowej Szkole Sądownictwa i Prokurat
+      pllum-12b.draw4  : Ustawa z dnia 11 lipca 2014 r. o zmianie ustawy o Krajowej Szkole Sądownictwa i Prokurat
+      pllum-12b.draw5  : Ustawa z dnia 11 lipca 2014 r. o zmianie ustawy o Krajowej Szkole Sądownictwa i Prokurat
+
+=== 2. answered by EVERY model: 14 — no signal, cut candidates ===
+   {'A2': 1, 'A3': 13}
+
+=== 3. scorer false negatives (gold visible, nugget says FAIL) ===
+  [A1] A1-DU-2007-328 / bielik-11b-v3.draw1
+      gold: 2007-04-04
+      said: Ustawa z dnia 7 marca 2007 r. o zmianie ustawy o dopłatach do ubezpieczeń upraw rolnych 
+  [A1] A1-DU-2007-328 / bielik-11b-v3.draw2
+      gold: 2007-04-04
+      said: Ustawa z dnia 7 marca 2007 r. o zmianie ustawy o dopłatach do ubezpieczeń upraw rolnych 
+  [A1] A1-DU-2007-328 / bielik-11b-v3.draw3
+      gold: 2007-04-04
+      said: Ustawa z dnia 7 marca 2007 r. o zmianie ustawy o dopłatach do ubezpieczeń upraw rolnych 
+  [A1] A1-DU-2007-328 / bielik-11b-v3.draw4
+      gold: 2007-04-04
+      said: Ustawa z dnia 7 marca 2007 r. o zmianie ustawy o dopłatach do ubezpieczeń upraw rolnych 
+  [A1] A1-DU-2007-328 / bielik-11b-v3.draw5
+      gold: 2007-04-04
+      said: Ustawa z dnia 7 marca 2007 r. o zmianie ustawy o dopłatach do ubezpieczeń upraw rolnych 
+  [A1] A1-DU-2007-328 / gemini-3.1-pro.draw1
+      gold: 2007-04-04
+      said: 2007-04-21
+  [A1] A1-DU-2007-328 / gemini-3.1-pro.draw2
+      gold: 2007-04-04
+      said: 2007-04-28
+  [A1] A1-DU-2007-328 / gemini-3.1-pro.draw3
+      gold: 2007-04-04
+      said: 2007-04-28
+  [A1] A1-DU-2007-328 / gemini-3.5-flash.draw1
+      gold: 2007-04-04
+      said: 2007-04-07
+  [A1] A1-DU-2007-328 / gpt-5.6-sol.draw1
+      gold: 2007-04-04
+      said: 2007-04-01
+  [A1] A1-DU-2007-328 / gpt-5.6-terra.draw2
+      gold: 2007-04-04
+      said: 2007-04-12
+  [A1] A1-DU-2007-328 / gpt-5.6-terra.draw3
+      gold: 2007-04-04
+      said: 2007-04-11
+  [A1] A1-DU-2007-328 / gpt-5.6-terra.draw4
+      gold: 2007-04-04
+      said: 2007-04-12
+  [A1] A1-DU-2007-328 / gpt-5.6-terra.draw5
+      gold: 2007-04-04
+      said: 2007-04-11
+  [A1] A1-DU-2007-328 / pllum-12b.draw1
+      gold: 2007-04-04
+      said: 2007-04-15
+  [A1] A1-DU-2007-328 / pllum-12b.draw2
+      gold: 2007-04-04
+      said: 2007-04-15
+  [A1] A1-DU-2007-328 / pllum-12b.draw3
+      gold: 2007-04-04
+      said: 2007-04-15
+  [A1] A1-DU-2007-328 / pllum-12b.draw4
+      gold: 2007-04-04
+      said: 2007-04-15
+  [A1] A1-DU-2007-328 / pllum-12b.draw5
+      gold: 2007-04-04
+      said: 2007-04-15
+  [A1] A1-DU-2021-904 / bielik-11b-v3.draw1
+      gold: 2021-05-15
+      said: Ustawa z dnia 15 kwietnia 2021 r. o zmianie ustawy o płatnościach w ramach systemów wspa
+  [A1] A1-DU-2021-904 / bielik-11b-v3.draw2
+      gold: 2021-05-15
+      said: Ustawa z dnia 15 kwietnia 2021 r. o zmianie ustawy o płatnościach w ramach systemów wspa
+  [A1] A1-DU-2021-904 / bielik-11b-v3.draw3
+      gold: 2021-05-15
+      said: Ustawa z dnia 15 kwietnia 2021 r. o zmianie ustawy o płatnościach w ramach systemów wspa
+  [A1] A1-DU-2021-904 / bielik-11b-v3.draw4
+      gold: 2021-05-15
+      said: Ustawa z dnia 15 kwietnia 2021 r. o zmianie ustawy o płatnościach w ramach systemów wspa
+  [A1] A1-DU-2021-904 / bielik-11b-v3.draw5
+      gold: 2021-05-15
+      said: Ustawa z dnia 15 kwietnia 2021 r. o zmianie ustawy o płatnościach w ramach systemów wspa
+  [A1] A1-DU-2004-624 / claude-opus-5.draw2
+      gold: 2004-05-05
+      said: **2004-05-01**
+  [A1] A1-DU-2004-624 / claude-opus-5.draw3
+      gold: 2004-05-05
+      said: **2004-05-01**
+  [A1] A1-DU-2004-624 / claude-opus-5.draw4
+      gold: 2004-05-05
+      said: **2004-05-01** Ustawa (Dz.U. 2004 nr 69 poz. 624) weszła w życie z dniem 1 maja 2004 r. 
+  [A1] A1-DU-2004-624 / claude-opus-5.draw5
+      gold: 2004-05-05
+      said: **2004-05-01**
+  [A1] A1-DU-2004-624 / gemini-3.5-flash.draw1
+      gold: 2004-05-05
+      said: 2004-05-01
+  [A1] A1-DU-2004-624 / gemini-3.5-flash.draw2
+      gold: 2004-05-05
+      said: 2004-05-01
+  [A1] A1-DU-2004-624 / gpt-5.6-sol.draw1
+      gold: 2004-05-05
+      said: 2004-05-01
+  [A1] A1-DU-2004-624 / gpt-5.6-sol.draw2
+      gold: 2004-05-05
+      said: 2004-05-01
+  [A1] A1-DU-2004-624 / gpt-5.6-sol.draw3
+      gold: 2004-05-05
+      said: 2004-05-01
+  [A1] A1-DU-2004-624 / gpt-5.6-sol.draw4
+      gold: 2004-05-05
+      said: 2004-05-01
+  [A1] A1-DU-2004-624 / gpt-5.6-sol.draw5
+      gold: 2004-05-05
+      said: 2004-05-01
+  [A1] A1-DU-2004-624 / gpt-5.6-terra.draw2
+      gold: 2004-05-05
+      said: 2004-05-08
+  [A1] A1-DU-2004-624 / gpt-5.6-terra.draw4
+      gold: 2004-05-05
+      said: 2004-05-16
+  [A1] A1-DU-2004-2784 / gpt-5.6-terra.draw1
+      gold: 2005-01-01
+      said: 2005-01-15
+  [A1] A1-DU-2004-2784 / gpt-5.6-terra.draw2
+      gold: 2005-01-01
+      said: 2005-01-12
+  [A1] A1-DU-2004-2784 / gpt-5.6-terra.draw5
+      gold: 2005-01-01
+      said: 2005-01-14
+  [A2] A2-DU-2006-1539-2014-10-05 / bielik-11b-v3.draw1
+      gold: Dz.U. 2013 poz. 144
+      said: Najnowszym ogłoszonym tekstem jednolitym „Ustawy z dnia 18 października 2006 r. o wyrobi
+  [A2] A2-DU-2006-1539-2014-10-05 / bielik-11b-v3.draw2
+      gold: Dz.U. 2013 poz. 144
+      said: Najnowszym ogłoszonym tekstem jednolitym „Ustawy z dnia 18 października 2006 r. o wyrobi
+  [A2] A2-DU-2006-1539-2014-10-05 / bielik-11b-v3.draw3
+      gold: Dz.U. 2013 poz. 144
+      said: Najnowszym ogłoszonym tekstem jednolitym „Ustawy z dnia 18 października 2006 r. o wyrobi
+  [A2] A2-DU-2006-1539-2014-10-05 / bielik-11b-v3.draw4
+      gold: Dz.U. 2013 poz. 144
+      said: Najnowszym ogłoszonym tekstem jednolitym „Ustawy z dnia 18 października 2006 r. o wyrobi
+  [A2] A2-DU-2006-1539-2014-10-05 / bielik-11b-v3.draw5
+      gold: Dz.U. 2013 poz. 144
+      said: Najnowszym ogłoszonym tekstem jednolitym „Ustawy z dnia 18 października 2006 r. o wyrobi
+  [A2] A2-DU-2001-353-2016-01-27 / gemini-3.5-flash.draw2
+      gold: Dz.U. 2015 poz. 103
+      said: Dz.U. 2015 poz. 1030
+  [A3] A3v-DU-2023-556 / claude-opus-5.draw1
+      gold: NIE
+      said: **TAK** - ustawa (Dz.U. 2023 poz. 556) weszła w życie w części już w 2023 r. (pierwsze p
+  [A3] A3v-DU-2023-556 / claude-opus-5.draw3
+      gold: NIE
+      said: **TAK** - ustawa (Dz.U. 2023 poz. 556) została ogłoszona 24 marca 2023 r. i część jej pr
+  [A3] A3v-DU-2023-556 / claude-opus-5.draw4
+      gold: NIE
+      said: **TAK** Ustawa z dnia 9 marca 2023 r. (Dz.U. 2023 poz. 556) została ogłoszona 24 marca 2
+  [A3] A3v-DU-2023-556 / claude-opus-5.draw5
+      gold: NIE
+      said: **TAK** Ustawa z dnia 9 marca 2023 r. o zmianie ustawy o postępowaniu egzekucyjnym w adm
+  [A4] A4n-DU-2023-556 / claude-opus-5.draw2
+      gold: NIE
+      said: **TAK** - jej przepisy (m.in. dotyczące terminów wejścia w życie) były następnie zmienia
+
+=== 4. per-family accuracy ===
+  family  bielik-11b-v3.draw1bielik-11b-v3.draw2bielik-11b-v3.draw3bielik-11b-v3.draw4bielik-11b-v3.draw5claude-opus-5.draw1claude-opus-5.draw2claude-opus-5.draw3claude-opus-5.draw4claude-opus-5.draw5gemini-3.1-pro.draw1gemini-3.1-pro.draw2gemini-3.1-pro.draw3gemini-3.5-flash.draw1gemini-3.5-flash.draw2  gpt-5.6-sol.draw1  gpt-5.6-sol.draw2  gpt-5.6-sol.draw3  gpt-5.6-sol.draw4  gpt-5.6-sol.draw5gpt-5.6-terra.draw1gpt-5.6-terra.draw2gpt-5.6-terra.draw3gpt-5.6-terra.draw4gpt-5.6-terra.draw5        gpt-5.draw1    pllum-12b.draw1    pllum-12b.draw2    pllum-12b.draw3    pllum-12b.draw4    pllum-12b.draw5
+  A1               3/24    12%         3/24    12%         3/24    12%         3/24    12%         3/24    12%         7/24    29%         4/24    17%         5/24    21%         7/24    29%         5/24    21%         6/24    25%         6/24    25%         6/24    25%         4/24    17%         4/24    17%         9/24    38%         9/24    38%        13/24    54%        12/24    50%         9/24    38%         5/24    21%         2/24     8%         4/24    17%         5/24    21%         3/24    12%         4/24    17%         1/24     4%         1/24     4%         1/24     4%         1/24     4%         1/24     4%
+  A2               4/8     50%         4/8     50%         4/8     50%         4/8     50%         4/8     50%         8/8    100%         8/8    100%         8/8    100%         8/8    100%         8/8    100%         6/8     75%         6/8     75%         6/8     75%         5/8     62%         3/8     38%         8/8    100%         8/8    100%         8/8    100%         8/8    100%         8/8    100%         7/8     88%         7/8     88%         7/8     88%         7/8     88%         7/8     88%         5/8     62%         6/8     75%         6/8     75%         6/8     75%         6/8     75%         6/8     75%
+  A3              16/24    67%        16/24    67%        16/24    67%        16/24    67%        16/24    67%        23/24    96%        23/24    96%        23/24    96%        23/24    96%        23/24    96%        23/24    96%        23/24    96%        23/24    96%        23/24    96%        22/24    92%        23/24    96%        24/24   100%        23/24    96%        24/24   100%        24/24   100%        23/24    96%        22/24    92%        22/24    92%        23/24    96%        21/24    88%        24/24   100%        15/24    62%        15/24    62%        15/24    62%        15/24    62%        15/24    62%
+  A4              11/24    46%        11/24    46%        11/24    46%        11/24    46%        11/24    46%        13/24    54%        14/24    58%        13/24    54%        14/24    58%        15/24    62%        16/24    67%        16/24    67%        15/24    62%        12/24    50%        14/24    58%        14/24    58%        11/24    46%        16/24    67%        14/24    58%        14/24    58%        13/24    54%        12/24    50%        14/24    58%        14/24    58%        11/24    46%        12/24    50%        13/24    54%        13/24    54%        13/24    54%        13/24    54%        13/24    54%

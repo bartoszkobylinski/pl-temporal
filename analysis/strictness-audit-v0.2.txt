@@ -1,0 +1,21 @@
+answered responses audited: 2303 (runs in responses-valid/, 79 questions)
+A1_multi_date             : 0
+A1_multi_date_incl_gold   : 0
+A2_multi_position         : 24
+A3A4_both_tak_nie         : 1
+long_answers              : 335
+
+--- A2_multi_position ---
+  A2-DU-1974-141-2018-11-24 / claude-opus-5.draw1: **Dz.U. 2018 poz. 917** - tekst jednolity Kodeksu pracy ogłoszony 16 maja 2018 r. (kolejny
+  A2-DU-1997-553-2020-03-20 / claude-opus-5.draw1: **Dz.U. 2019 poz. 1950** — to był wówczas najnowszy ogłoszony tekst jednolity Kodeksu karn
+  A2-DU-2010-1228-2017-05-14 / claude-opus-5.draw1: **Dz.U. 2016 poz. 1167** - obwieszczenie Marszałka Sejmu RP ogłaszające tekst jednolity us
+  A2-DU-2001-1198-2016-05-17 / claude-opus-5.draw1: **Dz.U. 2015 poz. 2058** Na 17 maja 2016 r. obowiązującym (najnowszym ogłoszonym) tekstem 
+  A2-DU-2002-558-2015-12-29 / claude-opus-5.draw1: **Dz.U. 2014 poz. 333** — obwieszczenie Marszałka Sejmu RP ogłaszające tekst jednolity ust
+  A2-DU-1974-141-2018-11-24 / claude-opus-5.draw2: **Dz.U. 2018 poz. 917** — tekst jednolity Kodeksu pracy ogłoszony 16 maja 2018 r. (kolejny
+  A2-DU-1997-553-2020-03-20 / claude-opus-5.draw2: **Dz.U. 2019 poz. 1950** - to był wówczas najnowszy ogłoszony tekst jednolity Kodeksu karn
+  A2-DU-2010-1228-2017-05-14 / claude-opus-5.draw2: **Dz.U. 2016 poz. 1167** — obwieszczenie Marszałka Sejmu RP ogłaszające tekst jednolity us
+  A2-DU-2001-1198-2016-05-17 / claude-opus-5.draw2: **Dz.U. 2015 poz. 2058** Na dzień 17 maja 2016 r. najnowszym ogłoszonym tekstem jednolitym
+  A2-DU-2002-558-2015-12-29 / claude-opus-5.draw2: **Dz.U. 2014 poz. 333** — obwieszczenie Marszałka Sejmu RP z 2014 r. w sprawie ogłoszenia 
+
+--- A3A4_both_tak_nie ---
+  A4y-DU-1997-555 / claude-opus-5.draw2: **TAK** — Kodeks postępowania karnego jest nowelizowany bardzo często i przewidziane są zm

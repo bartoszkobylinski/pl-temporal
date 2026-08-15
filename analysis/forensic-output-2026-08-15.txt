@@ -1,0 +1,66 @@
+
+########## v0.2 / responses-valid (31 runs, 79 questions) ##########
+bug instances (bucketed answer scored correct by old matcher): 39
+  A4n-DU-2014-897 / gemini-3.1-pro.draw1 [abstained]  gold='NIE'
+  A4n-DU-2014-897 / gemini-3.1-pro.draw2 [abstained]  gold='NIE'
+  A4n-DU-2014-897 / gemini-3.1-pro.draw3 [abstained]  gold='NIE'
+  A4n-DU-2014-1198 / gemini-3.1-pro.draw1 [abstained]  gold='NIE'
+  A4n-DU-2014-1198 / gemini-3.1-pro.draw2 [abstained]  gold='NIE'
+  A4n-DU-2003-2050 / gemini-3.1-pro.draw1 [abstained]  gold='NIE'
+  A4n-DU-2003-2050 / gemini-3.1-pro.draw2 [abstained]  gold='NIE'
+  A4n-DU-2003-2050 / gemini-3.1-pro.draw3 [abstained]  gold='NIE'
+  A4n-DU-2003-2050 / gpt-5.draw1 [abstained]  gold='NIE'
+  A4n-DU-2024-1863 / claude-opus-5.draw5 [abstained]  gold='NIE'
+  A4n-DU-2024-1863 / gemini-3.1-pro.draw1 [abstained]  gold='NIE'
+  A4n-DU-2024-1863 / gemini-3.1-pro.draw2 [abstained]  gold='NIE'
+  A4n-DU-2024-1863 / gemini-3.1-pro.draw3 [abstained]  gold='NIE'
+  A4n-DU-2024-1863 / gemini-3.5-flash.draw1 [abstained]  gold='NIE'
+  A4n-DU-2024-1863 / gemini-3.5-flash.draw2 [abstained]  gold='NIE'
+  A4n-DU-2024-1863 / gpt-5.draw1 [abstained]  gold='NIE'
+  A4n-DU-2023-556 / gemini-3.1-pro.draw1 [abstained]  gold='NIE'
+  A4n-DU-2023-556 / gemini-3.1-pro.draw2 [abstained]  gold='NIE'
+  A4n-DU-2023-556 / gemini-3.1-pro.draw3 [abstained]  gold='NIE'
+  A4n-DU-2023-556 / gemini-3.5-flash.draw2 [abstained]  gold='NIE'
+  A4n-DU-2023-556 / gpt-5.draw1 [abstained]  gold='NIE'
+  A4n-DU-2002-804 / gemini-3.1-pro.draw1 [abstained]  gold='NIE'
+  A4n-DU-2002-804 / gemini-3.1-pro.draw2 [abstained]  gold='NIE'
+  A4n-DU-2002-804 / gemini-3.1-pro.draw3 [abstained]  gold='NIE'
+  A4n-DU-2002-804 / gpt-5.draw1 [abstained]  gold='NIE'
+  A4n-DU-2004-624 / gemini-3.1-pro.draw1 [abstained]  gold='NIE'
+  A4n-DU-2004-624 / gemini-3.1-pro.draw2 [abstained]  gold='NIE'
+  A4n-DU-2004-624 / gemini-3.1-pro.draw3 [abstained]  gold='NIE'
+  A4n-DU-2005-1364 / gemini-3.1-pro.draw1 [abstained]  gold='NIE'
+  A4n-DU-2005-1364 / gemini-3.1-pro.draw2 [abstained]  gold='NIE'
+  A4n-DU-2005-1364 / gemini-3.1-pro.draw3 [abstained]  gold='NIE'
+  A4n-DU-2005-1364 / gpt-5.draw1 [abstained]  gold='NIE'
+  A4n-DU-2009-740 / claude-opus-5.draw1 [abstained]  gold='NIE'
+  A4n-DU-2009-740 / claude-opus-5.draw3 [abstained]  gold='NIE'
+  A4n-DU-2009-740 / gpt-5.draw1 [abstained]  gold='NIE'
+  A4n-DU-2005-1412 / gemini-3.1-pro.draw1 [abstained]  gold='NIE'
+  A4n-DU-2005-1412 / gemini-3.1-pro.draw2 [abstained]  gold='NIE'
+  A4n-DU-2005-1412 / gemini-3.1-pro.draw3 [abstained]  gold='NIE'
+  A4n-DU-2005-1412 / gpt-5.draw1 [abstained]  gold='NIE'
+all_wrong: old 6 -> new 6  (+[]  -[])
+all_right: old 14 -> new 15  (+['A4y-DU-2003-1590']  -[])
+
+########## v0.1 / responses-v0.1 (7 runs, 76 questions) ##########
+bug instances (bucketed answer scored correct by old matcher): 9
+  A4n-DU-2024-1863 / gemini-3-flash [abstained]  gold='NIE'
+  A4n-DU-2024-1863 / gemini-3.1-pro [abstained]  gold='NIE'
+  A4n-DU-2024-1863 / gemini-3.5-flash [abstained]  gold='NIE'
+  A4n-DU-2024-1863 / gpt-5 [abstained]  gold='NIE'
+  A4n-DU-2014-1198 / gpt-5 [abstained]  gold='NIE'
+  A4n-DU-2005-1364 / gemini-3.1-pro [abstained]  gold='NIE'
+  A4n-DU-2005-1364 / gpt-5 [abstained]  gold='NIE'
+  A4n-DU-2019-1403 / claude-opus-5 [abstained]  gold='NIE'
+  A4n-DU-2019-1403 / gpt-5 [abstained]  gold='NIE'
+all_wrong: old 9 -> new 9  (+[]  -[])
+all_right: old 33 -> new 34  (+['A3y-DU-2023-1450']  -[])
+
+########## no-signal cut audit ##########
+published cut list: 33 qids (anchor-stripped rule)
+old-analyzer all_right (stripped): 33
+new-analyzer all_right (stripped): 34
+WRONGLY CUT (in published cut, NOT all-right under fixed analyzer): 0
+would-now-cut (all-right under fixed analyzer, not in published cut): 1
+  A3y-DU-2023-1450

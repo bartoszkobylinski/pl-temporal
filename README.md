@@ -1,13 +1,18 @@
-# PL-Temporal — Track A
+# PL-Temporal — Track A (Diagnostic Challenge Set v0.2)
 
 A benchmark of temporal legal reasoning over Polish statutes: which version of the law
 was in force on a given date, when did an act enter into force, which Dziennik Ustaw
 position is the current consolidated text. 80 questions across 64 acts, 4 question
 families, deterministic string-nugget scoring — no LLM-as-judge.
 
-> **Status: golds verified.** All items flagged by the failure analyzer went through
-> independent human legal review against ISAP commencement clauses (2026-08-14):
-> zero gold edits, one ambiguous item quarantined. See `REVIEW-v0.2.md`.
+> **Status: v0.2 frozen as a diagnostic challenge set.** Because no-signal items were
+> pruned using v0.1 model results, v0.2 measures model discrimination on hard items,
+> not accuracy on a representative sample — a frozen v1.0 with a pre-registered
+> selection procedure is planned. All analyzer-flagged golds were verified by the
+> dataset owner against ISAP commencement clauses (zero gold edits, one ambiguous
+> item quarantined; an independent second annotation pass is planned for v1.0).
+> See `REVIEW-v0.2.md`, `RESULTS-v0.2.md` (limitations) and
+> `analysis/analyzer-abstention-incident.md`.
 
 ## Question families
 
@@ -21,17 +26,24 @@ families, deterministic string-nugget scoring — no LLM-as-judge.
 Abstention ("NIE WIEM"), truncation, and transport errors are separate buckets, never
 counted as wrong. Strict accuracy is computed on answered items.
 
-## v0.2 results (2026-08-14, N=5 draws where provider quotas allowed, 79 scored)
+## v0.2 results (79 scored items; mean over valid draws)
 
-| model | N valid | strict (answered) | abstained/draw |
-|---|---:|---:|---:|
-| claude-opus-5 | 5 | **74.2%** (69.6–77.6) | 11.6 |
-| gpt-5.6-sol | 5 | 69.9% (64.6–75.9) | **0** |
-| gemini-3.1-pro | 3 | 64.6% | 14.0 |
-| gpt-5.6-terra | 5 | 57.2% (53.2–60.8) | **0** |
-| gemini-3.5-flash | 2 | 56.8% (55.4–58.1) | 5.0 |
-| pllum-12b | 5 | 44.3% | **0** |
-| bielik-11b-v3 | 5 | 43.0% | **0** |
+Three metrics, three questions — there is no single leader without a utility
+function. *Coverage*: how often the model answers at all. *Selective accuracy*: how
+often it is right when it answers. *End-to-end*: usefulness when every question
+needs an answer.
+
+| model | N | coverage | selective acc | end-to-end | abstained/draw |
+|---|---:|---:|---:|---:|---:|
+| gpt-5.6-sol | 5 | **100%** | 69.9% | **69.9%** | **0** |
+| claude-opus-5 | 5 | 85.1% | **74.2%** | 63.0% | 11.6 |
+| gpt-5.6-terra | 5 | 100% | 57.2% | 57.2% | **0** |
+| gemini-3.1-pro | 3 | 82.3% | 64.6% | 53.2% | 14.0 |
+| gemini-3.5-flash | 2 | 93.7% | 56.8% | 53.2% | 5.0 |
+| pllum-12b | 5 | 100% | 44.3% | 44.3% | **0** |
+| bielik-11b-v3 | 5 | 100% | 43.0% | 43.0% | **0** |
+
+Majority baselines for the binary families: A3 = 65.2%, A4 = 50.0%.
 
 Full tables, findings, per-family accuracy, cost accounting, and incident log:
 `RESULTS-v0.2.md`. Notable: zero-abstention is a property of vendor training decisions,

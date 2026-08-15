@@ -31,9 +31,9 @@ check whether the nugget is too strict, not whether the model is right.
 | 2 | A1-DU-2004-624 | 13 | no-action: wrong dates (2004-05-01, 16.07, 16.04); same artifact |
 | 3 | A2-DU-2006-1539-2014-10-05 | 5 | no-action: bielik cites poz. 1446 vs gold 144; substring artifact, scorer right |
 | 4 | A1-DU-2021-904 | 5 | no-action: wrong dates (2021-05-20, 16.05); gold-ok per Queue 1 |
-| 5 | A3v-DU-2023-556 | 4 | OPEN: question-ambiguous candidate - staged commencement, "obowiazywala juz" unclear; owner decision pending |
+| 5 | A3v-DU-2023-556 | 4 | RESOLVED 2026-08-14: quarantined (question-ambiguous; staged commencement — general entry 2024-03-25 vs exception packages 2023-03/07; evidence in quarantine.json) |
 | 6 | A1-DU-2004-2784 | 3 | no-action: terra wrote 2005-01-15/12/14; digit artifact |
-| 7 | A4n-DU-2023-556 | 1 | OPEN: needs ISAP check - does Dz.U. 2023 poz. 556 have amending acts effective after 2023-09-29? |
+| 7 | A4n-DU-2023-556 | 1 | RESOLVED 2026-08-14: gold-ok (sole amending act Dz.U. 2023 poz. 1059 effective 2023-07-01, before the cutoff; ISAP, verified by owner) |
 | 8 | A2-DU-2001-353-2016-01-27 | 1 | no-action: "poz. 1030" vs gold "poz. 103"; model wrong, matcher artifact |
 
 ## Cut candidates (no signal)
