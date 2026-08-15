@@ -1,8 +1,8 @@
 # PL-Temporal — Track A (Diagnostic Challenge Set v0.2)
 
-A benchmark of temporal legal reasoning over Polish statutes: which version of the law
-was in force on a given date, when did an act enter into force, which Dziennik Ustaw
-position is the current consolidated text. 80 questions across 64 acts, 4 question
+A diagnostic challenge set for closed-book temporal QA over Polish statutes: which
+version of the law was in force on a given date, when did an act enter into force,
+which Dziennik Ustaw position is the current consolidated text. 80 questions across 64 acts, 4 question
 families, deterministic string-nugget scoring — no LLM-as-judge.
 
 > **Status: v0.2 frozen as a diagnostic challenge set.** Because no-signal items were

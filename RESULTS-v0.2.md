@@ -48,9 +48,9 @@ enactment) are answerable without any legal knowledge and act as a sanity contro
 v1.0 will report them separately from the core temporal score.
 
 \* Reduced N: Google API quota exhaustion mid-run (per-model daily request caps, then
-prepaid-credit depletion). Remaining draws (gemini-3.1-pro ×2, gemini-3.5-flash ×3,
-gemini-3-flash ×5) require a Google AI Studio credit top-up; the table will be updated
-in place when they land. gemini-3-flash has no valid v0.2 data yet.
+prepaid-credit depletion). gemini-3-flash has no valid v0.2 data. **The N values above
+are final** — v0.2 is frozen; any future completion of the missing Gemini draws would
+be a separately-dated supplementary run, never patched into this table.
 
 **gpt-5 (legacy, N=1, excluded from headline):** coverage 55.7%, selective 84.1%,
 end-to-end 46.8% (35 abstentions on its single valid draw before OpenAI credit
