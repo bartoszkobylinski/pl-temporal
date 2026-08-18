@@ -54,6 +54,18 @@ to have actually answered (a bucketed response blocks no-signal status — an
 abstention is signal). Section 3 (`gold_visible`) considers answered-and-wrong
 responses only. Regenerated analysis: `failures-v0.2-fixed.txt`.
 
+## Hardening follow-up (same day)
+
+The independent CI test suite (codex-tests) caught an asymmetry in the first fix:
+`all_right` required every model to have answered, `all_wrong` did not. Final
+semantics: BOTH labels require every run to have answered — an item with any
+bucketed response is neither "failed by every model" nor a no-signal candidate.
+Note the interaction with granularity: at per-draw granularity (31 runs) the
+full-coverage `all_wrong` is empty for v0.2 — frontier models abstain somewhere on
+nearly every hard item. The historical six-item Queue 1 (computed under the lenient
+rule) remains valid as extra verification — all six golds were human-checked and
+correct. v1.0 will run selection labels at per-model (draw-aggregated) granularity.
+
 ## Implications
 
 - Review queues (REVIEW-v0.2.md) built on the old analyzer stand: Queue 1 identical;

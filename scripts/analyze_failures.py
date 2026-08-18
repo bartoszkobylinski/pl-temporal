@@ -80,9 +80,12 @@ def main(responses_dir="responses"):
             ngs = NG[qid]
             correct[qid][m] = all(hit(n, ans) for n in ngs if n.get("required", True))
 
-    all_wrong = [qid for qid in Q if correct[qid] and not any(correct[qid].values())]
-    # no-signal candidates require EVERY model to have answered (not abstained,
-    # not errored) and answered correctly - a bucketed response is signal, not noise
+    # Both labels require EVERY model to have actually answered (not abstained,
+    # not errored): an abstention is neither a failure nor a success, so an item
+    # with any bucketed response is neither "failed by every model" nor a
+    # no-signal cut candidate - a bucketed response is signal, not noise.
+    all_wrong = [qid for qid in Q
+                 if len(correct[qid]) == len(models) and not any(correct[qid].values())]
     all_right = [qid for qid in Q
                  if len(correct[qid]) == len(models) and all(correct[qid].values())]
     n_bucketed = sum(len(v) for v in bucketed.values())
