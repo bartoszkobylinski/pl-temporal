@@ -92,7 +92,11 @@ is planned before v1.0; per-item evidence metadata — evidence article, derivat
 type, retrieval date — will make the set self-auditing):
 
 - **Queue 1 (6 items failed by every model): all golds correct.** The failures are
-  real difficulty, not bad golds — replicates the v0.1 pattern.
+  real difficulty, not bad golds — replicates the v0.1 pattern. The "every model"
+  label is the lenient-rule, per-draw one: under the symmetric full-coverage rule
+  adopted 2026-08-15 this queue is empty, because a frontier model abstains somewhere
+  on nearly every hard item. The six golds were human-checked and correct either way —
+  see `analysis/analyzer-abstention-incident.md` § Hardening follow-up.
 - **Queue 2 (8 scorer false-negative candidates): 6 no-action** (artifacts of the
   analyzer's deliberately generous `gold_visible` heuristic), **1 gold confirmed**
   (A4n-DU-2023-556), **1 quarantined** (A3v-DU-2023-556: staged commencement —

@@ -59,6 +59,12 @@ python3 scripts/score_nuggets.py responses/<model>.draw*.json
 python3 scripts/analyze_failures.py responses
 ```
 
+The committed analysis under `analysis/` was produced over the **31 valid draws** listed in
+`valid-draws-v0.2.json`, not over everything in `responses/` — draws killed by provider
+quota exhaustion are shipped for transparency but excluded from scoring. Running the command
+above over the whole directory picks up 45 draws and will not reproduce the committed
+numbers; filter to the valid draws first.
+
 The runner logs exact per-draw token usage into `responses/*.raw.json` manifests.
 Scoring is deterministic: normalized string-nugget matching (`scripts/score_nuggets.py`),
 one implementation shared by the scorer and the analyzer.

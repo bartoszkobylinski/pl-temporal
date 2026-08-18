@@ -7,6 +7,11 @@ question-ambiguous, and note the evidence (Dz.U. + article).
 
 ## Queue 1 — failed by EVERY model (6 items; bad gold or ambiguous prompt until proven otherwise)
 
+*Label note (2026-08-15): "every model" here is the lenient, per-draw rule in force when this
+queue was built. Under the symmetric full-coverage rule the queue is empty — each of these six
+items has at least one abstention among the 31 draws. The review below stands as extra
+verification; see `analysis/analyzer-abstention-incident.md` § Hardening follow-up.*
+
 | # | qid | gold | verdict | evidence |
 |---|---|---|---|---|
 | 1 | A1-DU-2001-1408 | 2002-11-10 | gold-ok | ISAP przepis koncowy, verified by owner 2026-08-14 |
