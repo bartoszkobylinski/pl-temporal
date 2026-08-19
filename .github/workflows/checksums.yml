@@ -1,0 +1,44 @@
+# This repository is a citable research artifact: CITATION.cff invites people to
+# reference v0.2, and CHECKSUMS-v0.2.txt is the promise that the files behind
+# that reference have not moved underneath them. Nothing enforced the promise.
+#
+# A dataset that quietly changes after publication is worse than one that never
+# published checksums at all, because the checksums make it look verified.
+name: Checksums
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: checksums-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      # --strict makes a malformed line an error rather than a skipped one, so a
+      # corrupted CHECKSUMS file cannot pass by being unreadable.
+      - name: Published files still match CHECKSUMS-v0.2.txt
+        run: sha256sum --check --strict CHECKSUMS-v0.2.txt
+
+      - name: Every listed file is present
+        run: |
+          missing=0
+          while read -r _hash name; do
+            [ -z "$name" ] && continue
+            if [ ! -f "$name" ]; then
+              echo "listed in CHECKSUMS but absent from the tree: $name" >&2
+              missing=1
+            fi
+          done < CHECKSUMS-v0.2.txt
+          exit "$missing"
