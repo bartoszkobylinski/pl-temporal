@@ -111,9 +111,11 @@ Net effect: no gold edits, one quarantine, scores computed on 79 items.
 An external review found that `analyze_failures.py` fed abstentions into the nugget
 matcher ("NIE WIEM" matched gold-`NIE` regexes). Headline results were never
 affected (the scorer always bucketed correctly). Forensic diff over v0.1 and v0.2
-runs: 39+9 mislabeled diagnostic instances, review queues unchanged, and **zero
-items wrongly cut** from the v0.2 set; one item (A3y-DU-2023-1450) would
-additionally have been cut and remains as a uniformly-easy item. Full report:
+runs: 39+9 mislabeled diagnostic instances, review queues unchanged by the bug fix,
+and **zero items wrongly cut** from the v0.2 set; one item (A3y-DU-2023-1450) would
+additionally have been cut and remains as a uniformly-easy item. A follow-up
+hardening (caught by the independent CI test suite) made both diagnostic labels
+require full answered coverage symmetrically. Full report:
 `analysis/analyzer-abstention-incident.md`. Fixed the same day.
 
 ## Strictness audit (2026-08-15)
