@@ -1,0 +1,36 @@
+# The four-metric scorer exists to report what v0.2 could not separate: whether a model
+# was wrong or merely off-format. It must never do that at the cost of the figures the
+# repository is cited for, so the suite ends by recomputing them from the committed
+# responses and failing if any drifts by more than 0.05pp.
+name: Tests
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: tests-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # The scorers are stdlib-only by design - a research artifact that needs a
+      # resolved dependency tree to reproduce its own numbers is not reproducible.
+      # pytest is the single test-time dependency.
+      - run: pip install pytest
+
+      - run: python -m pytest tests/ -q
