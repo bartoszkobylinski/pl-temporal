@@ -12,6 +12,7 @@ Two things are pinned here, and they are not the same kind of thing.
    stops reproducing them is a worse failure than one that crashes.
 """
 import importlib.util
+import json
 import subprocess
 import sys
 from pathlib import Path
@@ -33,6 +34,7 @@ sp = load("score_protocol")
 
 NIE_NUGGET = [{"kind": "regex", "pattern": r"\bNIE\b", "required": True}]
 DATE_NUGGET = [{"kind": "exact", "value": "2007-04-04", "required": True}]
+A2 = {"regime": "A2"}
 A3 = {"regime": "A3"}
 A1 = {"regime": "A1"}
 
@@ -105,3 +107,99 @@ def test_published_v02_figures_are_still_reproduced() -> None:
     )
     assert proc.returncode == 0, proc.stdout + proc.stderr
     assert "all published figures reproduced" in proc.stdout
+
+
+def test_legacy_flat_response_is_selected_only_once(tmp_path, monkeypatch) -> None:
+    """A model listed with several draws but only a flat responses/<name>.json has ONE
+    draw on disk, not several copies of one. Found by the CI test author on the notebook
+    mirror of this file. The committed corpus never triggers it - every response file is
+    .drawN.json, so the flat fallback is dead code for this dataset and no published figure
+    moves - but a v1.0 run made with --draws 1 would land straight in it."""
+    (tmp_path / "valid-draws-v0.2.json").write_text(
+        json.dumps({"valid_draws": {"model": [1, 2, 3]}}), encoding="utf-8")
+    responses = tmp_path / "responses"
+    responses.mkdir()
+    (responses / "model.json").write_text("{}", encoding="utf-8")
+    monkeypatch.chdir(tmp_path)
+    assert sp.valid_draw_paths("model") == ["responses/model.json"]
+
+
+def test_per_draw_files_are_preferred_and_all_selected(tmp_path, monkeypatch) -> None:
+    (tmp_path / "valid-draws-v0.2.json").write_text(
+        json.dumps({"valid_draws": {"model": [1, 2]}}), encoding="utf-8")
+    responses = tmp_path / "responses"
+    responses.mkdir()
+    for name in ("model.draw1.json", "model.draw2.json", "model.json"):
+        (responses / name).write_text("{}", encoding="utf-8")
+    monkeypatch.chdir(tmp_path)
+    assert sp.valid_draw_paths("model") == [
+        "responses/model.draw1.json", "responses/model.draw2.json"]
+
+
+def test_legacy_flat_response_does_not_fill_a_missing_numbered_draw(tmp_path, monkeypatch) -> None:
+    """responses/<model>.json and <model>.draw1.json are the same single run under two
+    names. With draw1 present, the flat file must not become a second observation because
+    the manifest happens to list a draw that was never written."""
+    (tmp_path / "valid-draws-v0.2.json").write_text(
+        json.dumps({"valid_draws": {"model": [1, 2]}}), encoding="utf-8")
+    responses = tmp_path / "responses"
+    responses.mkdir()
+    for name in ("model.draw1.json", "model.json"):
+        (responses / name).write_text("{}", encoding="utf-8")
+    monkeypatch.chdir(tmp_path)
+    assert sp.valid_draw_paths("model") == ["responses/model.draw1.json"]
+
+
+def test_a_model_with_no_valid_draws_selects_nothing(tmp_path, monkeypatch) -> None:
+    """gemini-3-flash is listed with an empty draw list; a flat file on disk must not
+    resurrect it into the roster."""
+    (tmp_path / "valid-draws-v0.2.json").write_text(
+        json.dumps({"valid_draws": {"model": []}}), encoding="utf-8")
+    responses = tmp_path / "responses"
+    responses.mkdir()
+    (responses / "model.json").write_text("{}", encoding="utf-8")
+    monkeypatch.chdir(tmp_path)
+    assert sp.valid_draw_paths("model") == []
+
+
+# The two cases below were authored by the CI test author on the notebook mirror
+# (lovspor-notebook#121, commit 774854e) and are carried here so both copies of the suite
+# cover the same behaviour.
+@pytest.mark.parametrize(
+    ("answer", "regime", "expected"),
+    [
+        ("Dz.U. 2024 poz. 123", "A2", True),
+        ("Dz. U. 2024 poz. 123", "A2", True),
+        ("Dz.U. 2024 nr 12 poz. 123", "A2", False),   # all eight A2 golds are "poz." only
+        ("TAK", "A3", True),
+        ("nie", "A3", True),
+        ("NIE WIEM", "A3", False),
+        ("TAK/NIE", "A3", False),
+    ],
+)
+def test_family_formats_accept_only_the_requested_answer_shape(answer, regime, expected) -> None:
+    assert (sp.parse_strict(answer, regime) is not None) is expected
+
+
+def test_score_file_separates_missing_non_answers_and_protocol_credit(tmp_path) -> None:
+    questions = {"correct": A1, "prose": A1, "wrong": A3, "abstained": A3,
+                 "error": A2, "missing": A3}
+    nuggets = {
+        "correct": DATE_NUGGET, "prose": DATE_NUGGET, "wrong": NIE_NUGGET,
+        "abstained": NIE_NUGGET, "missing": NIE_NUGGET,
+        "error": [{"kind": "exact", "value": "Dz.U. 2024 poz. 123", "required": True}],
+    }
+    response_path = tmp_path / "responses.json"
+    response_path.write_text(json.dumps({
+        "correct": "2007-04-04",
+        "prose": "Data wejścia w życie: 2007-04-04",
+        "wrong": "TAK",
+        "abstained": "NIE WIEM",
+        "error": "__ERROR__ HTTP 429",
+    }), encoding="utf-8")
+
+    assert sp.score_file(response_path, questions, nuggets) == {
+        "n_items": 6, "answered": 3, "abstained": 1, "non_answer": 2,
+        "conforming": 2, "leading": 2, "semantic": 2, "protocol": 1, "missing": 1,
+        "conforming_correct": 1, "leading_correct": 1,
+    }
