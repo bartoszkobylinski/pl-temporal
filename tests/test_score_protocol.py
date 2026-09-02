@@ -133,3 +133,29 @@ def test_per_draw_files_are_preferred_and_all_selected(tmp_path, monkeypatch) ->
     monkeypatch.chdir(tmp_path)
     assert sp.valid_draw_paths("model") == [
         "responses/model.draw1.json", "responses/model.draw2.json"]
+
+
+def test_legacy_flat_response_does_not_fill_a_missing_numbered_draw(tmp_path, monkeypatch) -> None:
+    """responses/<model>.json and <model>.draw1.json are the same single run under two
+    names. With draw1 present, the flat file must not become a second observation because
+    the manifest happens to list a draw that was never written."""
+    (tmp_path / "valid-draws-v0.2.json").write_text(
+        json.dumps({"valid_draws": {"model": [1, 2]}}), encoding="utf-8")
+    responses = tmp_path / "responses"
+    responses.mkdir()
+    for name in ("model.draw1.json", "model.json"):
+        (responses / name).write_text("{}", encoding="utf-8")
+    monkeypatch.chdir(tmp_path)
+    assert sp.valid_draw_paths("model") == ["responses/model.draw1.json"]
+
+
+def test_a_model_with_no_valid_draws_selects_nothing(tmp_path, monkeypatch) -> None:
+    """gemini-3-flash is listed with an empty draw list; a flat file on disk must not
+    resurrect it into the roster."""
+    (tmp_path / "valid-draws-v0.2.json").write_text(
+        json.dumps({"valid_draws": {"model": []}}), encoding="utf-8")
+    responses = tmp_path / "responses"
+    responses.mkdir()
+    (responses / "model.json").write_text("{}", encoding="utf-8")
+    monkeypatch.chdir(tmp_path)
+    assert sp.valid_draw_paths("model") == []

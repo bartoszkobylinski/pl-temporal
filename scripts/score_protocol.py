@@ -153,22 +153,19 @@ def mean(xs):
 def valid_draw_paths(model, base="responses"):
     """Draw selection is the frozen one: draws killed by provider quota/credit exhaustion
     are excluded by valid-draws-v0.2.json, not re-judged here."""
-    draws = json.load(open("valid-draws-v0.2.json"))["valid_draws"]
-    paths = []
-    for k in draws.get(model, []):
-        per_draw = f"{base}/{model}.draw{k}.json"
-        if os.path.exists(per_draw):
-            paths.append(per_draw)
-            continue
-        # run_models.py writes the flat name ONLY under --draws 1, so that file is one
-        # draw's answers however many indices the manifest lists for the model. Adding it
-        # once per index would report the same responses as several independent draws:
-        # the means would not move (identical values) but the draw count, and any min-max
-        # taken over them, would be fiction.
-        flat = f"{base}/{model}.json"
-        if os.path.exists(flat) and flat not in paths:
-            paths.append(flat)
-    return paths
+    draws = json.load(open("valid-draws-v0.2.json"))["valid_draws"].get(model, [])
+    numbered = [p for p in (f"{base}/{model}.draw{k}.json" for k in draws)
+                if os.path.exists(p)]
+    if numbered:
+        return numbered
+    # The flat name is an ALTERNATIVE NAMING FOR THE WHOLE MODEL, not a per-index
+    # fallback: run_models.py writes responses/<model>.json only under --draws 1, so it
+    # holds one draw's answers however many indices the manifest lists. Filling missing
+    # indices with it - or adding it beside model.draw1.json, which is the same run under
+    # the other name - would report one set of answers as several independent draws. The
+    # means would not move; the draw count, and any min-max over them, would be fiction.
+    flat = f"{base}/{model}.json"
+    return [flat] if draws and os.path.exists(flat) else []
 
 
 # Declines phrased in something other than the protocol phrase. Hand-built: it BOUNDS the
