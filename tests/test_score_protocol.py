@@ -34,6 +34,7 @@ sp = load("score_protocol")
 
 NIE_NUGGET = [{"kind": "regex", "pattern": r"\bNIE\b", "required": True}]
 DATE_NUGGET = [{"kind": "exact", "value": "2007-04-04", "required": True}]
+A2 = {"regime": "A2"}
 A3 = {"regime": "A3"}
 A1 = {"regime": "A1"}
 
@@ -159,3 +160,46 @@ def test_a_model_with_no_valid_draws_selects_nothing(tmp_path, monkeypatch) -> N
     (responses / "model.json").write_text("{}", encoding="utf-8")
     monkeypatch.chdir(tmp_path)
     assert sp.valid_draw_paths("model") == []
+
+
+# The two cases below were authored by the CI test author on the notebook mirror
+# (lovspor-notebook#121, commit 774854e) and are carried here so both copies of the suite
+# cover the same behaviour.
+@pytest.mark.parametrize(
+    ("answer", "regime", "expected"),
+    [
+        ("Dz.U. 2024 poz. 123", "A2", True),
+        ("Dz. U. 2024 poz. 123", "A2", True),
+        ("Dz.U. 2024 nr 12 poz. 123", "A2", False),   # all eight A2 golds are "poz." only
+        ("TAK", "A3", True),
+        ("nie", "A3", True),
+        ("NIE WIEM", "A3", False),
+        ("TAK/NIE", "A3", False),
+    ],
+)
+def test_family_formats_accept_only_the_requested_answer_shape(answer, regime, expected) -> None:
+    assert (sp.parse_strict(answer, regime) is not None) is expected
+
+
+def test_score_file_separates_missing_non_answers_and_protocol_credit(tmp_path) -> None:
+    questions = {"correct": A1, "prose": A1, "wrong": A3, "abstained": A3,
+                 "error": A2, "missing": A3}
+    nuggets = {
+        "correct": DATE_NUGGET, "prose": DATE_NUGGET, "wrong": NIE_NUGGET,
+        "abstained": NIE_NUGGET, "missing": NIE_NUGGET,
+        "error": [{"kind": "exact", "value": "Dz.U. 2024 poz. 123", "required": True}],
+    }
+    response_path = tmp_path / "responses.json"
+    response_path.write_text(json.dumps({
+        "correct": "2007-04-04",
+        "prose": "Data wejścia w życie: 2007-04-04",
+        "wrong": "TAK",
+        "abstained": "NIE WIEM",
+        "error": "__ERROR__ HTTP 429",
+    }), encoding="utf-8")
+
+    assert sp.score_file(response_path, questions, nuggets) == {
+        "n_items": 6, "answered": 3, "abstained": 1, "non_answer": 2,
+        "conforming": 2, "leading": 2, "semantic": 2, "protocol": 1, "missing": 1,
+        "conforming_correct": 1, "leading_correct": 1,
+    }
