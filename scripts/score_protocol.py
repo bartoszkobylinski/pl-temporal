@@ -156,10 +156,18 @@ def valid_draw_paths(model, base="responses"):
     draws = json.load(open("valid-draws-v0.2.json"))["valid_draws"]
     paths = []
     for k in draws.get(model, []):
-        for stem in (f"{base}/{model}.draw{k}.json", f"{base}/{model}.json"):
-            if os.path.exists(stem):
-                paths.append(stem)
-                break
+        per_draw = f"{base}/{model}.draw{k}.json"
+        if os.path.exists(per_draw):
+            paths.append(per_draw)
+            continue
+        # run_models.py writes the flat name ONLY under --draws 1, so that file is one
+        # draw's answers however many indices the manifest lists for the model. Adding it
+        # once per index would report the same responses as several independent draws:
+        # the means would not move (identical values) but the draw count, and any min-max
+        # taken over them, would be fiction.
+        flat = f"{base}/{model}.json"
+        if os.path.exists(flat) and flat not in paths:
+            paths.append(flat)
     return paths
 
 

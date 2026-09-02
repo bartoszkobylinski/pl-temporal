@@ -12,6 +12,7 @@ Two things are pinned here, and they are not the same kind of thing.
    stops reproducing them is a worse failure than one that crashes.
 """
 import importlib.util
+import json
 import subprocess
 import sys
 from pathlib import Path
@@ -105,3 +106,30 @@ def test_published_v02_figures_are_still_reproduced() -> None:
     )
     assert proc.returncode == 0, proc.stdout + proc.stderr
     assert "all published figures reproduced" in proc.stdout
+
+
+def test_legacy_flat_response_is_selected_only_once(tmp_path, monkeypatch) -> None:
+    """A model listed with several draws but only a flat responses/<name>.json has ONE
+    draw on disk, not several copies of one. Found by the CI test author on the notebook
+    mirror of this file. The committed corpus never triggers it - every response file is
+    .drawN.json, so the flat fallback is dead code for this dataset and no published figure
+    moves - but a v1.0 run made with --draws 1 would land straight in it."""
+    (tmp_path / "valid-draws-v0.2.json").write_text(
+        json.dumps({"valid_draws": {"model": [1, 2, 3]}}), encoding="utf-8")
+    responses = tmp_path / "responses"
+    responses.mkdir()
+    (responses / "model.json").write_text("{}", encoding="utf-8")
+    monkeypatch.chdir(tmp_path)
+    assert sp.valid_draw_paths("model") == ["responses/model.json"]
+
+
+def test_per_draw_files_are_preferred_and_all_selected(tmp_path, monkeypatch) -> None:
+    (tmp_path / "valid-draws-v0.2.json").write_text(
+        json.dumps({"valid_draws": {"model": [1, 2]}}), encoding="utf-8")
+    responses = tmp_path / "responses"
+    responses.mkdir()
+    for name in ("model.draw1.json", "model.draw2.json", "model.json"):
+        (responses / name).write_text("{}", encoding="utf-8")
+    monkeypatch.chdir(tmp_path)
+    assert sp.valid_draw_paths("model") == [
+        "responses/model.draw1.json", "responses/model.draw2.json"]
