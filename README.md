@@ -57,6 +57,7 @@ while legacy gpt-5 was the heaviest abstainer in the roster.
 python3 scripts/run_models.py models.json --draws 5   # writes responses/<model>.drawK.json
 python3 scripts/score_nuggets.py responses/<model>.draw*.json
 python3 scripts/analyze_failures.py responses
+python3 scripts/score_protocol.py --self-check        # four metrics; reads valid-draws itself
 ```
 
 The committed analysis under `analysis/` was produced over the **31 valid draws** listed in
@@ -65,9 +66,18 @@ quota exhaustion are shipped for transparency but excluded from scoring. Running
 above over the whole directory picks up 45 draws and will not reproduce the committed
 numbers; filter to the valid draws first.
 
+`score_protocol.py` is the exception to the filtering warning above: it reads
+`valid-draws-v0.2.json` itself, and `--self-check` fails unless its recomputed selective
+accuracy still equals every figure published in `RESULTS-v0.2.md`.
+
 The runner logs exact per-draw token usage into `responses/*.raw.json` manifests.
 Scoring is deterministic: normalized string-nugget matching (`scripts/score_nuggets.py`),
 one implementation shared by the scorer and the analyzer.
+
+Nuggets match anywhere in a response, so `score_nuggets.py` credits a right answer written
+in the wrong form exactly like a conforming one. `scripts/score_protocol.py` reports the two
+axes apart — abstention, format compliance, semantic accuracy, protocol accuracy — without
+altering the frozen v0.2 figures; see `analysis/format-compliance-v0.2.md`.
 
 ## Contamination canary
 

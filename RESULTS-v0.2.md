@@ -142,7 +142,15 @@ is planned for v1.0 as defense-in-depth. Full audit:
 4. **One leftover no-signal item** (A3y-DU-2023-1450, see analyzer incident) —
    uniformly easy, no ranking effect.
 5. **Single annotator** for the gold review (owner); independent second pass planned.
-6. **Min–max ranges are draw ranges, not confidence intervals**; hierarchical
+6. **Semantic correctness and format compliance are one number here.** Nuggets match
+   anywhere in the response, so an answer that ignores the requested form but states the
+   right value is credited like a conforming one. Measured after the freeze and reported
+   separately in `analysis/format-compliance-v0.2.md`
+   (`scripts/score_protocol.py --self-check`): no figure below is inflated — every
+   selective accuracy reproduces exactly — but the split moves `claude-opus-5` from 63.0%
+   end-to-end to 25.6% protocol accuracy, and shows `bielik-11b-v3` emitting 20.6% of its
+   *correct* answers off-format. A prompt-level protocol is v1.0 work; it needs a rerun.
+7. **Min–max ranges are draw ranges, not confidence intervals**; hierarchical
    (act-level, draw-aware) bootstrap planned for the paper.
 
 ## Cost appendix (2026-08-14 run)
